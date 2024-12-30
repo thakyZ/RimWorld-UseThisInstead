@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Use This Instead</name>
+  <packageId>Mlie.UseThisInstead</packageId>
+  <author>Mlie</author>
+  <url>https://github.com/emipa606/UseThisInstead</url>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/iCj5o7O.png[/img]
+
+Continuations of mods has many names and has become an large part of the RimWorld modding community.
+It can be hard to keep track of when mods gets a new version by another modder. This mod tries to remedy that by keeping track and informing about when a mod has a replacement version on the workshop. 
+
+Data from my own [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1541984105]collection[/url] of continued mods is a large part of this mod. Another large part is from my friends continuations; the [url=https://steamcommunity.com/workshop/filedetails/?id=2787987321]collection[/url] by [url=https://steamcommunity.com/id/zaljerem]Zaljerem[/url] and the [url=https://steamcommunity.com/workshop/filedetails/?id=2099979037]collection[/url] by [url=https://steamcommunity.com/profiles/76561198032065507]velcroboy333[/url]. 
+The mod also uses info about mods that have been requested on my Discord server and continued by another modder as well as any mod published on the workshop using the usual suffixes for continued mods (as seen in the preview image).
+
+This mod should work well together with my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3218690663]Show Mod Updates[/url] to make it easier to keep track of you favorite mods during those major RimWorld updates!
+
+This mod will be updated regularly to include new releases. I hope this will be of use and if you have info about a mod-continuation not showing up in the mod or a faulty replacement suggestion, please report it in the comments or on the linked Discord-server.
+
+[table]
+    [tr]
+        [td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/UseThisInstead][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/h5VwTNL.png[/img][/td]
+    [/tr]
+[/table]
+
+[img]https://i.imgur.com/Ds0rBAD.png[/img]
+Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my [url=https://store.steampowered.com/wishlist/id/Mlie]Wishlist[/url] or buy me a cup of tea.
+
+[url=https://ko-fi.com/G2G55DDYD][img]https://i.imgur.com/VWG0yff.png[/img][/url]
+
+[img]https://i.imgur.com/5xwDG6H.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
+[/list]</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.0</modVersion>
+</ModMetaData>

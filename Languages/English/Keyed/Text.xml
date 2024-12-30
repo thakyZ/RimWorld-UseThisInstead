@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <UTI.veboseLogging>Verbose logging</UTI.veboseLogging>
+  <UTI.veboseLoggingtt>For debugging mostly</UTI.veboseLoggingtt>
+  <UTI.author>By: </UTI.author>
+  <UTI.replace>Replace mod</UTI.replace>
+  <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>
+  <UTI.subscribing>Subscribing to {0} with Steam-id {1}</UTI.subscribing>
+  <UTI.subscribed>Subscribed to {0}</UTI.subscribed>
+  <UTI.unsubscribing>Unsubscribing {0} with Steam-id {1}</UTI.unsubscribing>
+  <UTI.unsubscribed>Unsubscribed to {0}</UTI.unsubscribed>
+  <UTI.failedToSubscribe>Failed to subscribe to {0} with Steam-id {1}</UTI.failedToSubscribe>
+  <UTI.failedToUnsubscribe>Failed to unsubscribe from {0} with Steam-id {1}</UTI.failedToUnsubscribe>
+  <UTI.alreadyReplacing>A mod is being replaced, please wait until completed</UTI.alreadyReplacing>
+  <UTI.restartNeeded>Will restart on close</UTI.restartNeeded>
+  <UTI.stillWaiting>Waiting for mod to download, will time out after one minute</UTI.stillWaiting>
+  <UTI.replaceMod>Do you want to unsubscribe to
+"{0}" by {2}
+and replace it with
+"{1}" by {3}</UTI.replaceMod>
+  <UTI.replaceModActive>Do you want to unsubscribe to
+"{0}" by {2}
+and replace it with
+"{1}" by {3}
+
+NOTE: Since the mod is currently active, a restart will be triggered when you close the replacement-list to apply the new mod.</UTI.replaceModActive>
+  <UTI.modReplaced>Replaced "{0}" with "{1}"</UTI.modReplaced>
+  <UTI.foundReplacements>Found replacements: {0}</UTI.foundReplacements>
+  <UTI.modVersion>Installed mod-version: {0}</UTI.modVersion>
+  <UTI.replacements>{0} replacements</UTI.replacements>
+  <UTI.checkingAll>Checking all mods</UTI.checkingAll>
+  <UTI.checkingEnabled>Checking enabled mods</UTI.checkingEnabled>
+  <UTI.allMods>Check all mods</UTI.allMods>
+  <UTI.allModstt>Will check all installed mods for replacements instead of only the currently loaded</UTI.allModstt>
+</LanguageData>

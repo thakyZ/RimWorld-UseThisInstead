@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModReplacement>
+  <Author>Balthoraz</Author>
+  <ModId>Balthoraz.RimUniverse.CoreModule</ModId>
+  <ModName>RimUniverse - Core</ModName>
+  <ReplacementAuthor>Mlie</ReplacementAuthor>
+  <ReplacementModId>Mlie.RimUniverseCoreModule</ReplacementModId>
+  <ReplacementName>RimUniverse - Core (Continued)</ReplacementName>
+  <ReplacementSteamId>2576822036</ReplacementSteamId>
+  <SteamId>2257043629</SteamId>
+</ModReplacement>

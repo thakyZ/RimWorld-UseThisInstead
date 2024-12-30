@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModReplacement>
+  <Author>Fluffy</Author>
+  <ModId>Fluffy.ModManager</ModId>
+  <ModName>Mod Manager</ModName>
+  <ReplacementAuthor>Mlie</ReplacementAuthor>
+  <ReplacementModId>Mlie.ModManager</ReplacementModId>
+  <ReplacementName>Mod Manager (Continued)</ReplacementName>
+  <ReplacementSteamId>3306654341</ReplacementSteamId>
+  <SteamId>1507748539</SteamId>
+</ModReplacement>
