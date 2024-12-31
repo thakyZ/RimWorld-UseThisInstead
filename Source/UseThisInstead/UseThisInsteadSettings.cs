@@ -8,6 +8,7 @@ namespace UseThisInstead;
 internal class UseThisInsteadSettings : ModSettings
 {
     public bool AllMods;
+    public bool AlwaysShow;
     public bool VeboseLogging;
 
     /// <summary>
@@ -17,6 +18,7 @@ internal class UseThisInsteadSettings : ModSettings
     {
         base.ExposeData();
         Scribe_Values.Look(ref AllMods, "AllMods");
+        Scribe_Values.Look(ref AlwaysShow, "AlwaysShow");
         Scribe_Values.Look(ref VeboseLogging, "VeboseLogging");
     }
 }

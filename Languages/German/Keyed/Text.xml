@@ -33,4 +33,6 @@ HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie di
   <UTI.checkingEnabled>Überprüfung der aktivierten Mods</UTI.checkingEnabled>
   <UTI.allMods>Alle Mods prüfen</UTI.allMods>
   <UTI.allModstt>Überprüft alle installierten Mods auf Ersetzungen, anstatt nur die aktuell geladenen</UTI.allModstt>
+  <UTI.alwaysShow>Ersatztaste immer anzeigen</UTI.alwaysShow>
+  <UTI.alwaysShowtt>Zeigt die Schaltfläche zum Öffnen des Ersetzungsfensters an, auch wenn keine Ersetzungen gefunden wurden</UTI.alwaysShowtt>
 </LanguageData>

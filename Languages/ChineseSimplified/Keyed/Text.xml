@@ -33,4 +33,6 @@
   <UTI.checkingEnabled>检查已启用的修改器</UTI.checkingEnabled>
   <UTI.allMods>检查所有修改</UTI.allMods>
   <UTI.allModstt>将检查所有已安装的多器官功能障碍以进行替换，而不是只检查当前加载的多器官功能障碍</UTI.allModstt>
+  <UTI.alwaysShow>始终显示更换按钮</UTI.alwaysShow>
+  <UTI.alwaysShowtt>即使没有找到替代品，也会显示打开替换窗口的按钮</UTI.alwaysShowtt>
 </LanguageData>

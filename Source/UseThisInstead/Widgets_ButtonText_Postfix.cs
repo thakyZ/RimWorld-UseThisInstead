@@ -11,7 +11,8 @@ public static class Widgets_ButtonText_Postfix
 {
     public static void Postfix(ref Rect rect, string label)
     {
-        if (label != LanguageDatabase.activeLanguage.FriendlyNameNative || !UseThisInstead.FoundModReplacements.Any())
+        if (label != LanguageDatabase.activeLanguage.FriendlyNameNative ||
+            !UseThisInsteadMod.instance.Settings.AlwaysShow && !UseThisInstead.FoundModReplacements.Any())
         {
             return;
         }

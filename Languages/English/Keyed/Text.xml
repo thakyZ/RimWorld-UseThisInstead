@@ -2,6 +2,8 @@
 <LanguageData>
   <UTI.veboseLogging>Verbose logging</UTI.veboseLogging>
   <UTI.veboseLoggingtt>For debugging mostly</UTI.veboseLoggingtt>
+  <UTI.alwaysShow>Always show replacement button</UTI.alwaysShow>
+  <UTI.alwaysShowtt>Will show the button to open the replacement-window even if there are no replacements found</UTI.alwaysShowtt>
   <UTI.author>By: </UTI.author>
   <UTI.replace>Replace mod</UTI.replace>
   <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>

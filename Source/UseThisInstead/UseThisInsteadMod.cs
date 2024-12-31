@@ -55,7 +55,15 @@ internal class UseThisInsteadMod : Mod
         var listing_Standard = new Listing_Standard();
         listing_Standard.Begin(rect);
         listing_Standard.Gap();
-        listing_Standard.CheckboxLabeled("UTI.allMods".Translate(), ref Settings.AllMods, "UTI.allModstt".Translate());
+
+        if (listing_Standard.ButtonText("UTI.replacements".Translate(UseThisInstead.FoundModReplacements.Count),
+                widthPct: 0.5f))
+        {
+            Find.WindowStack.Add(new Dialog_ModReplacements());
+        }
+
+        listing_Standard.CheckboxLabeled("UTI.alwaysShow".Translate(), ref Settings.AlwaysShow,
+            "UTI.alwaysShowtt".Translate());
         listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VeboseLogging,
             "UTI.veboseLoggingtt".Translate());
         if (currentVersion != null)
