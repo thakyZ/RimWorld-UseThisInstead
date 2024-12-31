@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModReplacement>
-  <Author>swatblack</Author>
-  <ModId>dM.MSERevivedRevived</ModId>
-  <ModName>Medical System Expansion - Double Revived</ModName>
+  <Author>Abraxas</Author>
+  <ModId>Abraxas.MSERevived.ProstheticCombat</ModId>
+  <ModName>MSE - Prosthetic Combat - Revived</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.mseprostheticcombat</ReplacementModId>
   <ReplacementName>MSE - Prosthetic Combat (Continued)</ReplacementName>
   <ReplacementSteamId>2862488812</ReplacementSteamId>
-  <SteamId>3237131184</SteamId>
+  <SteamId>2011186093</SteamId>
 </ModReplacement>

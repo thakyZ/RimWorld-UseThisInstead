@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModReplacement>
-  <Author>Zaljerem</Author>
-  <ModId>zal.saucedmealsbakes</ModId>
-  <ModName>Sauced Meals and Bakes (Continued)</ModName>
+  <Author>tidal</Author>
+  <ModId>OptimusPrimordial.SaucedBakes</ModId>
+  <ModName>Sauced Bakes</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.saucedbakes</ReplacementModId>
   <ReplacementName>Sauced Bakes (Continued)</ReplacementName>
   <ReplacementSteamId>2941201931</ReplacementSteamId>
-  <SteamId>3288429511</SteamId>
+  <SteamId>2459299484</SteamId>
 </ModReplacement>

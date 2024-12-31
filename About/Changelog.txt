@@ -1,5 +1,8 @@
 # Changelog for UseThisInstead
 
+1.5.3 - Fixed some faulty replacements, thanks Zal!
+
+
 1.5.2 - Fixed Starship Troopers Remastered - Weapons replacement
 
 
