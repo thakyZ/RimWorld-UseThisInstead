@@ -1,5 +1,9 @@
 # Changelog for UseThisInstead
 
+1.5.6 - Added 41 more rules based on workshop scanning
+Currently at 2024-04-16 scanning backwards
+
+
 1.5.5 - Added version-info to the metadata
 Checks if the suggested replacement is updated to the running RimWorld version
 Cleaned out some old replacements where the original mod is no longer published
