@@ -3,10 +3,12 @@
   <Author>Galzein</Author>
   <ModId>
   </ModId>
-  <ModName>Moritz´s EnergySolutions</ModName>
+  <ModName>Moritz´s EnergySolutions[B18]</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.moritzenergy</ReplacementModId>
   <ReplacementName>Moritz's EnergySolutions (Continued)</ReplacementName>
   <ReplacementSteamId>2731631798</ReplacementSteamId>
   <SteamId>930649376</SteamId>
+  <Versions>0.18</Versions>
+  <ReplacementVersions>1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

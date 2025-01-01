@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Johnny Silverhand</Author>
   <ModId>eastern.dragons.mod</ModId>
-  <ModName>Eastern Dragons Mod(1.0)</ModName>
+  <ModName>Eastern Dragons Mod(V1)</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.easterndragons</ReplacementModId>
   <ReplacementName>The Eastern Dragons (Continued)</ReplacementName>
   <ReplacementSteamId>2672488311</ReplacementSteamId>
   <SteamId>2006612357</SteamId>
+  <Versions>1.1</Versions>
+  <ReplacementVersions>1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

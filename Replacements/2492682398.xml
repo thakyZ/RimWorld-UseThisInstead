@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Beto</Author>
   <ModId>Beto.InfiniteTrader</ModId>
-  <ModName>Infinite Trader</ModName>
+  <ModName>Infinite Trader (Continued by Zaljerem)</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.infinitetrader</ReplacementModId>
   <ReplacementName>Infinite Trader (Continued)</ReplacementName>
   <ReplacementSteamId>3329534536</ReplacementSteamId>
   <SteamId>2492682398</SteamId>
+  <Versions>1.2,1.3</Versions>
+  <ReplacementVersions>1.5</ReplacementVersions>
 </ModReplacement>

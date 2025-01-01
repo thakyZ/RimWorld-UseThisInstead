@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Asterion</Author>
   <ModId>Asterion.TROM.Core</ModId>
-  <ModName>ThisRimOfMine</ModName>
+  <ModName>ThisRimOfMine [HIATUS]</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.ThisRimOfMine</ReplacementModId>
   <ReplacementName>ThisRimOfMine (Continued)</ReplacementName>
   <ReplacementSteamId>2998095518</ReplacementSteamId>
   <SteamId>2586396923</SteamId>
+  <Versions>1.3</Versions>
+  <ReplacementVersions>1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

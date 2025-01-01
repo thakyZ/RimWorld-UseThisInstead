@@ -3,10 +3,12 @@
   <Author>✬Rustic Fox✬</Author>
   <ModId>
   </ModId>
-  <ModName>Primitive Floors V2</ModName>
+  <ModName>[B18] Primitive Floors V2 [Discontinued]</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.PrimitiveFloors</ReplacementModId>
   <ReplacementName>Primitive Floors (Continued)</ReplacementName>
   <ReplacementSteamId>2801265143</ReplacementSteamId>
   <SteamId>1279268896</SteamId>
+  <Versions>0.18</Versions>
+  <ReplacementVersions>1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

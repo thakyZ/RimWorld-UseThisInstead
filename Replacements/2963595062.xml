@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Deon ☣</Author>
   <ModId>deon.borderlands14</ModId>
-  <ModName>Borderlands: The Rim</ModName>
+  <ModName>[1.4] Borderlands: The Rim</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.borderlands</ReplacementModId>
   <ReplacementName>Borderlands: The Rim (Continued)</ReplacementName>
   <ReplacementSteamId>3337102401</ReplacementSteamId>
   <SteamId>2963595062</SteamId>
+  <Versions>1.4</Versions>
+  <ReplacementVersions>1.4,1.5</ReplacementVersions>
 </ModReplacement>

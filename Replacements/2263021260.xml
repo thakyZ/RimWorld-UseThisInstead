@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>YAYO</Author>
   <ModId>com.yayo.raceQuestPawn</ModId>
-  <ModName>Real Faction Guest</ModName>
+  <ModName>Real Faction Guest (1.3)</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.RealFactionGuest</ReplacementModId>
   <ReplacementName>Real Faction Guest (Continued)</ReplacementName>
   <ReplacementSteamId>2886929245</ReplacementSteamId>
   <SteamId>2263021260</SteamId>
+  <Versions>1.2,1.3</Versions>
+  <ReplacementVersions>1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

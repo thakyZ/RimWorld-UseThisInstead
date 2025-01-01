@@ -5,6 +5,7 @@
   <UTI.alwaysShow>Always show replacement button</UTI.alwaysShow>
   <UTI.alwaysShowtt>Will show the button to open the replacement-window even if there are no replacements found</UTI.alwaysShowtt>
   <UTI.author>By: </UTI.author>
+  <UTI.notUpdated>NOTE: Replacement does not support this version of RimWorld ({0})</UTI.notUpdated>
   <UTI.replace>Replace mod</UTI.replace>
   <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>
   <UTI.subscribing>Subscribing to {0} with Steam-id {1}</UTI.subscribing>
@@ -16,14 +17,24 @@
   <UTI.alreadyReplacing>A mod is being replaced, please wait until completed</UTI.alreadyReplacing>
   <UTI.restartNeeded>Will restart on close</UTI.restartNeeded>
   <UTI.stillWaiting>Waiting for mod to download, will time out after one minute</UTI.stillWaiting>
-  <UTI.replaceMod>Do you want to unsubscribe to
-"{0}" by {2}
-and replace it with
-"{1}" by {3}</UTI.replaceMod>
-  <UTI.replaceModActive>Do you want to unsubscribe to
-"{0}" by {2}
-and replace it with
-"{1}" by {3}
+  <UTI.replaceMod>Original
+{0}
+Author: {2}
+Versions: {4}
+
+Replacement
+{1}
+Author: {3}
+Versions: {5}</UTI.replaceMod>
+  <UTI.replaceModActive>Original
+{0}
+Author: {2}
+Versions: {4}
+
+Replacement
+{1}
+Author: {3}
+Versions: {5}
 
 NOTE: Since the mod is currently active, a restart will be triggered when you close the replacement-list to apply the new mod.</UTI.replaceModActive>
   <UTI.modReplaced>Replaced "{0}" with "{1}"</UTI.modReplaced>

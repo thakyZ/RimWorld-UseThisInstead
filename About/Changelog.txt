@@ -1,5 +1,13 @@
 # Changelog for UseThisInstead
 
+1.5.5 - Added version-info to the metadata
+Checks if the suggested replacement is updated to the running RimWorld version
+Cleaned out some old replacements where the original mod is no longer published
+Updated the replacements with the published name of each mod instead of the name in the about-file
+Total replacement-rules in this release: 1360
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.4 - Added the button to the mod-options as well for those with a custom gui.
 Added a mod option to always show the button regardless if there are any replacements found
 Used DeepL to update translations for ChineseSimplified, French, German

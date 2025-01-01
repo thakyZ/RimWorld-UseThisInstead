@@ -164,7 +164,7 @@ public class Dialog_ModReplacements : Window
 
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
                         replaceModString.Translate(modInfo.ModName, modInfo.ReplacementName, modInfo.Author,
-                            modInfo.ReplacementAuthor),
+                            modInfo.ReplacementAuthor, modInfo.Versions, modInfo.ReplacementVersions),
                         delegate
                         {
                             if (modInfo.ModMetaData.Active)
@@ -181,9 +181,22 @@ public class Dialog_ModReplacements : Window
                 }
             }
 
+            var originalColor = GUI.color;
+            if (!modInfo.ReplacementSupportsVersion())
+            {
+                GUI.color = Color.red;
+            }
+
             Widgets.Label(rightModRect.TopHalf(), modInfo.ReplacementName);
             Widgets.Label(rightModRect.BottomHalf(), $"{"UTI.author".Translate()}{modInfo.ReplacementAuthor}");
             TooltipHandler.TipRegion(rightModRect, modInfo.SteamUri().AbsoluteUri);
+            if (!modInfo.ReplacementSupportsVersion())
+            {
+                GUI.color = originalColor;
+                TooltipHandler.TipRegion(rightModRect,
+                    "UTI.notUpdated".Translate(VersionControl.CurrentVersionStringWithoutBuild));
+            }
+
             Widgets.DrawHighlightIfMouseover(rightModRect);
             if (Widgets.ButtonInvisible(rightModRect))
             {

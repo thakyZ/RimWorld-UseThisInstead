@@ -15,16 +15,6 @@
   <UTI.alreadyReplacing>正在更换一个模块，请等待完成</UTI.alreadyReplacing>
   <UTI.restartNeeded>关闭时将重新启动</UTI.restartNeeded>
   <UTI.stillWaiting>等待模式下载，一分钟后超时</UTI.stillWaiting>
-  <UTI.replaceMod>您是否想取消订阅
-"{0}"的 {2｝
-并用
-"{1}" by {3}</UTI.replaceMod>
-  <UTI.replaceModActive>您是否想取消订阅
-"{0}"的 {2｝
-并用
-"{1}" by {3}
-
-注意：由于该模块当前处于激活状态，因此当您关闭替换列表以应用新模块时，将触发重启。</UTI.replaceModActive>
   <UTI.modReplaced>将"{0}"替换为"{1}"</UTI.modReplaced>
   <UTI.foundReplacements>找到替代品：{0}</UTI.foundReplacements>
   <UTI.modVersion>已安装模块版本：{0}</UTI.modVersion>
@@ -35,4 +25,25 @@
   <UTI.allModstt>将检查所有已安装的多器官功能障碍以进行替换，而不是只检查当前加载的多器官功能障碍</UTI.allModstt>
   <UTI.alwaysShow>始终显示更换按钮</UTI.alwaysShow>
   <UTI.alwaysShowtt>即使没有找到替代品，也会显示打开替换窗口的按钮</UTI.alwaysShowtt>
+  <UTI.notUpdated>注意：替换版本不支持此版本的《环游世界》（{0}）。</UTI.notUpdated>
+  <UTI.replaceMod>原创
+{0}
+作者：{2}
+版本：{4}
+
+替换
+{1}
+作者： {3}{3}
+版本：{5}</UTI.replaceMod>
+  <UTI.replaceModActive>原创
+{0}
+作者：{2}
+版本：{4}
+
+替换
+{1}
+作者： {3}{3}
+版本：{5}
+
+注意：由于该 MOD 当前处于激活状态，因此当您关闭替换列表以应用新的 MOD 时，将会触发重启。</UTI.replaceModActive>
 </LanguageData>

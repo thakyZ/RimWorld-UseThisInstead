@@ -3,10 +3,12 @@
   <Author>pelador</Author>
   <ModId>
   </ModId>
-  <ModName>Viking Brand Whale Blubber</ModName>
+  <ModName>Viking Brand Whale Blubber (VBWB)</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.VikingBrandWhaleBlubber</ReplacementModId>
   <ReplacementName>Viking Brand Whale Blubber (Continued)</ReplacementName>
   <ReplacementSteamId>2210268220</ReplacementSteamId>
   <SteamId>1593870236</SteamId>
+  <Versions>1.0</Versions>
+  <ReplacementVersions>1.0,1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Helixien</Author>
   <ModId>HLX.RimworldUNSCArmoury</ModId>
-  <ModName>HALO: UNSC Armoury</ModName>
+  <ModName>[Discontinued] HALO: UNSC Armoury</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.HALOUNSCArmoury</ReplacementModId>
   <ReplacementName>HALO: UNSC Armoury (Continued)</ReplacementName>
   <ReplacementSteamId>3391798246</ReplacementSteamId>
   <SteamId>2287902429</SteamId>
+  <Versions>1.2,1.3</Versions>
+  <ReplacementVersions>1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

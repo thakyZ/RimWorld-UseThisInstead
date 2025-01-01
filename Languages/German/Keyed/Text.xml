@@ -15,16 +15,6 @@
   <UTI.alreadyReplacing>Ein Mod wird ersetzt, bitte warten Sie bis zur Fertigstellung</UTI.alreadyReplacing>
   <UTI.restartNeeded>Wird beim Schließen neu gestartet</UTI.restartNeeded>
   <UTI.stillWaiting>Wartet auf den Download der Mod, wird nach einer Minute abgebrochen</UTI.stillWaiting>
-  <UTI.replaceMod>Möchten Sie sich abmelden von
-"{0}" durch {2}
-und ersetzen Sie es durch
-"{1}" von {3}</UTI.replaceMod>
-  <UTI.replaceModActive>Möchten Sie sich abmelden von
-"{0}" durch {2}
-und ersetzen Sie es durch
-"{1}" von {3}
-
-HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie die Ersetzungsliste schließen, um die neue Mod anzuwenden.</UTI.replaceModActive>
   <UTI.modReplaced>Ersetzte "{0}" durch "{1}".</UTI.modReplaced>
   <UTI.foundReplacements>Gefundene Ersetzungen: {0}</UTI.foundReplacements>
   <UTI.modVersion>Installierte Mod-Version: {0}</UTI.modVersion>
@@ -35,4 +25,25 @@ HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie di
   <UTI.allModstt>Überprüft alle installierten Mods auf Ersetzungen, anstatt nur die aktuell geladenen</UTI.allModstt>
   <UTI.alwaysShow>Ersatztaste immer anzeigen</UTI.alwaysShow>
   <UTI.alwaysShowtt>Zeigt die Schaltfläche zum Öffnen des Ersetzungsfensters an, auch wenn keine Ersetzungen gefunden wurden</UTI.alwaysShowtt>
+  <UTI.notUpdated>HINWEIS: Diese Version von RimWorld ({0}) wird von der Ersatzlösung nicht unterstützt.</UTI.notUpdated>
+  <UTI.replaceMod>Original
+{0}
+Autor: {2}
+Versionen: {4}
+
+Ersetzen
+{1}
+Autor: {3}
+Versionen: {5}</UTI.replaceMod>
+  <UTI.replaceModActive>Original
+{0}
+Autor: {2}
+Versionen: {4}
+
+Ersetzen
+{1}
+Autor: {3}
+Versionen: {5}
+
+HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie die Ersetzungsliste schließen, um die neue Mod anzuwenden.</UTI.replaceModActive>
 </LanguageData>

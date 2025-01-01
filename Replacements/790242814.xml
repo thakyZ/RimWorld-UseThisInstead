@@ -3,10 +3,12 @@
   <Author>bean</Author>
   <ModId>
   </ModId>
-  <ModName>Napoleonic Age</ModName>
+  <ModName>[B18] Napoleonic Age</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.NapoleonicAge</ReplacementModId>
   <ReplacementName>Napoleonic Age (Continued)</ReplacementName>
   <ReplacementSteamId>2052310880</ReplacementSteamId>
   <SteamId>790242814</SteamId>
+  <Versions>0.18</Versions>
+  <ReplacementVersions>1.1,1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

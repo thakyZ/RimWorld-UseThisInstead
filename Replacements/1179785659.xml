@@ -3,10 +3,12 @@
   <Author>BrokenValkyrie</Author>
   <ModId>
   </ModId>
-  <ModName>Septic Tank</ModName>
+  <ModName>Septic Tank(Out of Date)</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.SepticTank</ReplacementModId>
   <ReplacementName>Septic Tank (Continued)</ReplacementName>
   <ReplacementSteamId>2385310448</ReplacementSteamId>
   <SteamId>1179785659</SteamId>
+  <Versions>0.18</Versions>
+  <ReplacementVersions>1.1,1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>YAYO</Author>
   <ModId>com.yayo.disasters</ModId>
-  <ModName>Disasters2020</ModName>
+  <ModName>Disasters 1.1</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.disasters</ReplacementModId>
   <ReplacementName>Disasters (Continued)</ReplacementName>
   <ReplacementSteamId>3350846100</ReplacementSteamId>
   <SteamId>2012266605</SteamId>
+  <Versions>1.1</Versions>
+  <ReplacementVersions>1.5</ReplacementVersions>
 </ModReplacement>

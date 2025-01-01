@@ -12,6 +12,8 @@ This mod should work well together with my [Show Mod Updates](https://steamcommu
 
 This mod will be updated regularly to include new releases. I hope this will be of use and if you have info about a mod-continuation not showing up in the mod or a faulty replacement suggestion, please report it in the comments or on the linked Discord-server.
 
+Added an option to Always show replacement button. Also included the button in the mod-options for those with a custom gui.
+
 ![Image](https://i.imgur.com/Ds0rBAD.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my [Wishlist](https://store.steampowered.com/wishlist/id/Mlie) or buy me a cup of tea.

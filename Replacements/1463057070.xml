@@ -5,7 +5,9 @@
   <ModName>RimRPC - RichPresence</ModName>
   <ReplacementAuthor>MasterPNJ</ReplacementAuthor>
   <ReplacementModId>weilbyte.rimrpc</ReplacementModId>
-  <ReplacementName>RimRPC - RichPresence</ReplacementName>
+  <ReplacementName>RimRPC - Discord RichPresence (Continued) - Forked / Rework</ReplacementName>
   <ReplacementSteamId>3291415439</ReplacementSteamId>
   <SteamId>1463057070</SteamId>
+  <Versions>1.0,1.1,1.2,1.3</Versions>
+  <ReplacementVersions>1.0,1.1,1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

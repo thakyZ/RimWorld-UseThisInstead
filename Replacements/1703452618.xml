@@ -2,10 +2,12 @@
 <ModReplacement>
   <Author>Jdalt40</Author>
   <ModId>jdalt.levelthis</ModId>
-  <ModName>Level This! (Version 1.4: Plasmatic Configuloo)</ModName>
+  <ModName>Level This!</ModName>
   <ReplacementAuthor>Zaljerem</ReplacementAuthor>
   <ReplacementModId>zal.levelthis</ReplacementModId>
   <ReplacementName>Level This! (Continued)</ReplacementName>
   <ReplacementSteamId>3263017689</ReplacementSteamId>
   <SteamId>1703452618</SteamId>
+  <Versions>1.0,1.1</Versions>
+  <ReplacementVersions>1.5</ReplacementVersions>
 </ModReplacement>

@@ -15,16 +15,6 @@
   <UTI.alreadyReplacing>Un mod est en cours de remplacement, veuillez patienter jusqu'à ce qu'il soit terminé.</UTI.alreadyReplacing>
   <UTI.restartNeeded>Redémarre à la fermeture</UTI.restartNeeded>
   <UTI.stillWaiting>Attente du téléchargement du mod, expiration au bout d'une minute</UTI.stillWaiting>
-  <UTI.replaceMod>Voulez-vous vous désabonner de
-"{0}" par {2}
-et le remplacer par
-"{1}" par {3}</UTI.replaceMod>
-  <UTI.replaceModActive>Voulez-vous vous désabonner de
-"{0}" par {2}
-et le remplacer par
-"{1}" par {3}
-
-NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lorsque vous fermerez la liste de remplacement pour appliquer le nouveau mod.</UTI.replaceModActive>
   <UTI.modReplaced>Remplacement de "{0}" par "{1}"</UTI.modReplaced>
   <UTI.foundReplacements>Remplacements trouvés : {0}</UTI.foundReplacements>
   <UTI.modVersion>Version de mod installée : {0}</UTI.modVersion>
@@ -35,4 +25,25 @@ NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lor
   <UTI.allModstt>Vérifie les remplacements de tous les mods installés au lieu des seuls mods actuellement chargés.</UTI.allModstt>
   <UTI.alwaysShow>Toujours montrer le bouton de remplacement</UTI.alwaysShow>
   <UTI.alwaysShowtt>Affiche le bouton pour ouvrir la fenêtre de remplacement même s'il n'y a pas de remplacements trouvés.</UTI.alwaysShowtt>
+  <UTI.notUpdated>NOTE : Le remplacement ne prend pas en charge cette version de RimWorld ({0})</UTI.notUpdated>
+  <UTI.replaceMod>Original
+{0}
+Auteur : {2}
+Versions : {4}
+
+Remplacement
+{1}
+Auteur : {3}
+Versions : {5}</UTI.replaceMod>
+  <UTI.replaceModActive>Original
+{0}
+Auteur : {2}
+Versions : {4}
+
+Remplacement
+{1}
+Auteur : {3}
+Versions : {5}
+
+NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lorsque vous fermerez la liste de remplacement pour appliquer le nouveau mod.</UTI.replaceModActive>
 </LanguageData>

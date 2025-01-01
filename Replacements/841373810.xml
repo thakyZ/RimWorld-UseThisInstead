@@ -3,10 +3,12 @@
   <Author>bomb-drop it</Author>
   <ModId>
   </ModId>
-  <ModName>Nanotrasen's Armory</ModName>
+  <ModName>Nanotrasen's Armory (A16)</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.NanotrasenArmory</ReplacementModId>
   <ReplacementName>Nanotrasen's Armory (Continued)</ReplacementName>
   <ReplacementSteamId>2171553025</ReplacementSteamId>
   <SteamId>841373810</SteamId>
+  <Versions>0.16</Versions>
+  <ReplacementVersions>1.1,1.2,1.3,1.4,1.5</ReplacementVersions>
 </ModReplacement>

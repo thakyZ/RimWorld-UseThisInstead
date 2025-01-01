@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Xml.Serialization;
+using RimWorld;
 using Steamworks;
 using Verse;
 
@@ -13,10 +15,12 @@ public class ModReplacement
 
     public string Author { get; set; }
     public string ModId { get; set; }
+    public string Versions { get; set; }
 
     public string ModName { get; set; }
     public string ReplacementAuthor { get; set; }
     public string ReplacementModId { get; set; }
+    public string ReplacementVersions { get; set; }
 
     public string ReplacementName { get; set; }
     public ulong ReplacementSteamId { get; set; }
@@ -37,5 +41,11 @@ public class ModReplacement
     public PublishedFileId_t GetReplacementPublishedFileId()
     {
         return new PublishedFileId_t(ReplacementSteamId);
+    }
+
+    public bool ReplacementSupportsVersion()
+    {
+        return ReplacementVersions.Split(',')
+            .Any(versionString => VersionControl.CurrentVersionStringWithoutBuild == versionString);
     }
 }
