@@ -15,8 +15,6 @@ public class Dialog_ModReplacements : Window
     private static readonly Vector2 previewImage = new Vector2(120f, 100f);
     private static readonly Vector2 buttonSize = new Vector2(140f, 25f);
     private static readonly Texture2D ArrowTex = ContentFinder<Texture2D>.Get("UI/Overlays/TutorArrowRight");
-    private static bool lastReplacingStatus;
-    private static bool anythingChanged;
 
     public Dialog_ModReplacements()
     {
@@ -31,7 +29,6 @@ public class Dialog_ModReplacements : Window
     {
         if (UseThisInstead.Replacing)
         {
-            Messages.Message("UTI.alreadyReplacing".Translate(), MessageTypeDefOf.RejectInput);
             return;
         }
 
@@ -41,20 +38,17 @@ public class Dialog_ModReplacements : Window
     public override void PostClose()
     {
         base.PostClose();
-        if (anythingChanged)
+        if (!UseThisInstead.AnythingChanged)
         {
-            ModsConfig.RestartFromChangedMods();
+            return;
         }
+
+        Messages.Message("UTI.activeModsChanged".Translate(), MessageTypeDefOf.NeutralEvent);
+        Find.WindowStack.Add(new Page_ModsConfig());
     }
 
     public override void DoWindowContents(Rect inRect)
     {
-        if (lastReplacingStatus != UseThisInstead.Replacing && !UseThisInstead.Replacing)
-        {
-            UseThisInstead.CheckForReplacements(true);
-        }
-
-        lastReplacingStatus = UseThisInstead.Replacing;
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
         Text.Font = GameFont.Medium;
@@ -62,7 +56,7 @@ public class Dialog_ModReplacements : Window
         listingStandard.Label("UTI.foundReplacements".Translate(UseThisInstead.FoundModReplacements.Count));
 
         Text.Font = GameFont.Small;
-        if (anythingChanged)
+        if (UseThisInstead.AnythingChanged)
         {
             listingStandard.Label("UTI.restartNeeded".Translate());
         }
@@ -169,7 +163,7 @@ public class Dialog_ModReplacements : Window
                         {
                             if (modInfo.ModMetaData.Active)
                             {
-                                anythingChanged = true;
+                                UseThisInstead.AnythingChanged = true;
                             }
 
                             new Thread(() =>
@@ -177,6 +171,7 @@ public class Dialog_ModReplacements : Window
                                 Thread.CurrentThread.IsBackground = true;
                                 UseThisInstead.ReplaceMod(modInfo);
                             }).Start();
+                            Find.WindowStack.Add(new ReplacementStatus_Window());
                         }));
                 }
             }

@@ -46,4 +46,11 @@
 版本：{5}
 
 注意：由于该 MOD 当前处于激活状态，因此当您关闭替换列表以应用新的 MOD 时，将会触发重启。</UTI.replaceModActive>
+  <UTI.waitingUnsub>等待蒸汽处理退订</UTI.waitingUnsub>
+  <UTI.waitingSub>等待蒸汽处理订阅</UTI.waitingSub>
+  <UTI.activeModsChanged>活动模式已更改，重启前打开模式配置以启用和排序</UTI.activeModsChanged>
+  <UTI.activatingMods>在活动模式列表中添加新模式</UTI.activatingMods>
+  <UTI.incompatibility>{0}与激活的模式不兼容：{0}</UTI.incompatibility>
+  <UTI.checkingRequirements>检查先决条件是否已安装</UTI.checkingRequirements>
+  <UTI.replacementStatus>更换进度</UTI.replacementStatus>
 </LanguageData>

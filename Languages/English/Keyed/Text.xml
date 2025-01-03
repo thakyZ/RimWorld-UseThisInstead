@@ -2,18 +2,24 @@
 <LanguageData>
   <UTI.veboseLogging>Verbose logging</UTI.veboseLogging>
   <UTI.veboseLoggingtt>For debugging mostly</UTI.veboseLoggingtt>
+  <UTI.waitingUnsub>Waiting for steam to process unsubscription</UTI.waitingUnsub>
+  <UTI.waitingSub>Waiting for steam to process subscription</UTI.waitingSub>
   <UTI.alwaysShow>Always show replacement button</UTI.alwaysShow>
   <UTI.alwaysShowtt>Will show the button to open the replacement-window even if there are no replacements found</UTI.alwaysShowtt>
   <UTI.author>By: </UTI.author>
   <UTI.notUpdated>NOTE: Replacement does not support this version of RimWorld ({0})</UTI.notUpdated>
   <UTI.replace>Replace mod</UTI.replace>
+  <UTI.activeModsChanged>Active mods changed, opening mod-config to enable and sort before restart</UTI.activeModsChanged>
+  <UTI.activatingMods>Adding new mods to the active mod-list</UTI.activatingMods>
+  <UTI.incompatibility>{0} is incompatible with an active mod: {0}</UTI.incompatibility>
+  <UTI.checkingRequirements>Checking if prerequirements are installed</UTI.checkingRequirements>
   <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>
   <UTI.subscribing>Subscribing to {0} with Steam-id {1}</UTI.subscribing>
   <UTI.subscribed>Subscribed to {0}</UTI.subscribed>
-  <UTI.unsubscribing>Unsubscribing {0} with Steam-id {1}</UTI.unsubscribing>
+  <UTI.unsubscribing>Unsubscribing to {0} ({1})</UTI.unsubscribing>
   <UTI.unsubscribed>Unsubscribed to {0}</UTI.unsubscribed>
-  <UTI.failedToSubscribe>Failed to subscribe to {0} with Steam-id {1}</UTI.failedToSubscribe>
-  <UTI.failedToUnsubscribe>Failed to unsubscribe from {0} with Steam-id {1}</UTI.failedToUnsubscribe>
+  <UTI.failedToSubscribe>Failed to subscribe to {0} ({1})</UTI.failedToSubscribe>
+  <UTI.failedToUnsubscribe>Failed to unsubscribe from {0} ({1})</UTI.failedToUnsubscribe>
   <UTI.alreadyReplacing>A mod is being replaced, please wait until completed</UTI.alreadyReplacing>
   <UTI.restartNeeded>Will restart on close</UTI.restartNeeded>
   <UTI.stillWaiting>Waiting for mod to download, will time out after one minute</UTI.stillWaiting>
@@ -37,6 +43,7 @@ Author: {3}
 Versions: {5}
 
 NOTE: Since the mod is currently active, a restart will be triggered when you close the replacement-list to apply the new mod.</UTI.replaceModActive>
+  <UTI.replacementStatus>Replacement progress</UTI.replacementStatus>
   <UTI.modReplaced>Replaced "{0}" with "{1}"</UTI.modReplaced>
   <UTI.foundReplacements>Found replacements: {0}</UTI.foundReplacements>
   <UTI.modVersion>Installed mod-version: {0}</UTI.modVersion>

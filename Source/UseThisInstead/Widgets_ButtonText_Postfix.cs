@@ -11,6 +11,12 @@ public static class Widgets_ButtonText_Postfix
 {
     public static void Postfix(ref Rect rect, string label)
     {
+        if (UseThisInstead.AnythingChanged && !Find.WindowStack.AnyWindowAbsorbingAllInput)
+        {
+            ModsConfig.Save();
+            ModsConfig.RestartFromChangedMods();
+        }
+
         if (label != LanguageDatabase.activeLanguage.FriendlyNameNative ||
             !UseThisInsteadMod.instance.Settings.AlwaysShow && !UseThisInstead.FoundModReplacements.Any())
         {

@@ -46,4 +46,11 @@ Auteur : {3}
 Versions : {5}
 
 NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lorsque vous fermerez la liste de remplacement pour appliquer le nouveau mod.</UTI.replaceModActive>
+  <UTI.waitingUnsub>Attente du traitement de la désinscription par steam</UTI.waitingUnsub>
+  <UTI.waitingSub>Attente du traitement de l'abonnement par steam</UTI.waitingSub>
+  <UTI.activeModsChanged>Mods actifs modifiés, ouverture de mod-config pour activer et trier avant le redémarrage</UTI.activeModsChanged>
+  <UTI.activatingMods>Ajout de nouveaux mods à la liste des mods actifs</UTI.activatingMods>
+  <UTI.incompatibility>{0} est incompatible avec un mod actif : {0}</UTI.incompatibility>
+  <UTI.checkingRequirements>Vérification de l'installation des prérequis</UTI.checkingRequirements>
+  <UTI.replacementStatus>Progression du remplacement</UTI.replacementStatus>
 </LanguageData>

@@ -46,4 +46,11 @@ Autor: {3}
 Versionen: {5}
 
 HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie die Ersetzungsliste schließen, um die neue Mod anzuwenden.</UTI.replaceModActive>
+  <UTI.waitingUnsub>Warten auf die Bearbeitung der Abmeldung durch Steam</UTI.waitingUnsub>
+  <UTI.waitingSub>Warten auf die Bearbeitung des Abonnements durch Steam</UTI.waitingSub>
+  <UTI.activeModsChanged>Aktive Mods geändert, Mod-Config zum Aktivieren und Sortieren vor dem Neustart öffnen</UTI.activeModsChanged>
+  <UTI.activatingMods>Hinzufügen neuer Mods zur aktiven Mod-Liste</UTI.activatingMods>
+  <UTI.incompatibility>{0} ist nicht kompatibel mit einem aktiven Mod: {0}</UTI.incompatibility>
+  <UTI.checkingRequirements>Prüfen, ob die Vorbedingungen installiert sind</UTI.checkingRequirements>
+  <UTI.replacementStatus>Fortschritte bei der Ersetzung</UTI.replacementStatus>
 </LanguageData>

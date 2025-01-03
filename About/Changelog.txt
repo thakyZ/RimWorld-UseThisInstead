@@ -1,5 +1,12 @@
 # Changelog for UseThisInstead
 
+1.5.7 - Added a nicer progress window when replacing mods with clerer info
+Added all rules based on requests fixed by others on the Discord server
+Scanned all mods released on the workshop since 2023
+Current total rules: 1473
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.6 - Added 41 more rules based on workshop scanning
 Currently at 2024-04-16 scanning backwards
 
