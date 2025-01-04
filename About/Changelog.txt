@@ -1,5 +1,8 @@
 # Changelog for UseThisInstead
 
+1.5.8 - Maintanence. Added 1 rules and removed 0. Total rules: 1474
+
+
 1.5.7 - Added a nicer progress window when replacing mods with clerer info
 Added all rules based on requests fixed by others on the Discord server
 Scanned all mods released on the workshop since 2023
