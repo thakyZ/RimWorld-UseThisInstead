@@ -4,6 +4,11 @@
   <UTI.veboseLoggingtt>For debugging mostly</UTI.veboseLoggingtt>
   <UTI.waitingUnsub>Waiting for steam to process unsubscription</UTI.waitingUnsub>
   <UTI.waitingSub>Waiting for steam to process subscription</UTI.waitingSub>
+  <UTI.showingRelevant>Showing relevant replacements</UTI.showingRelevant>
+  <UTI.showingAll>Showing all replacements</UTI.showingAll>
+  <UTI.onlyRelevantInfo>Only show compatible replacements</UTI.onlyRelevantInfo>
+  <UTI.onlyRelevant>Only show compatible replacements</UTI.onlyRelevant>
+  <UTI.onlyRelevanttt>Will not show replacements that do not support the installed version of the game</UTI.onlyRelevanttt>
   <UTI.alwaysShow>Always show replacement button</UTI.alwaysShow>
   <UTI.alwaysShowtt>Will show the button to open the replacement-window even if there are no replacements found</UTI.alwaysShowtt>
   <UTI.author>By: </UTI.author>
@@ -52,4 +57,7 @@ NOTE: Since the mod is currently active, a restart will be triggered when you cl
   <UTI.checkingEnabled>Checking enabled mods</UTI.checkingEnabled>
   <UTI.allMods>Check all mods</UTI.allMods>
   <UTI.allModstt>Will check all installed mods for replacements instead of only the currently loaded</UTI.allModstt>
+  <UTI.steamMod>Mod is loaded from the Steam mod-folder</UTI.steamMod>
+  <UTI.localMod>Mod is loaded from the local mod-folder</UTI.localMod>
+  <UTI.cantUnsubscribe>{0} is a local mod, skipping unsubscribing</UTI.cantUnsubscribe>
 </LanguageData>

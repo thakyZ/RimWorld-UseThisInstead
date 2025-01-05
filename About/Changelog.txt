@@ -1,5 +1,11 @@
 # Changelog for UseThisInstead
 
+1.5.9 - Added option to only show mods compatible with the installed rimworld version
+Added check for local mods with indicators and logic during replacement
+Added 1.4 support
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.8 - Maintanence. Added 1 rules and removed 0. Total rules: 1474
 
 

@@ -91,6 +91,12 @@ public static class UseThisInstead
                 continue;
             }
 
+            if (UseThisInsteadMod.instance.Settings.OnlyRelevant && !replacement.ReplacementSupportsVersion())
+            {
+                LogMessage($"Ignoring {mod.Name} since it does not support this version of RimWorld");
+                continue;
+            }
+
             replacement.ModMetaData = mod;
             FoundModReplacements.Add(replacement);
         }
@@ -141,7 +147,7 @@ public static class UseThisInstead
             ModsConfig.SetActive(modReplacement.ModId, false);
         }
 
-        if (!UnSubscribeToMod(modReplacement.ModMetaData.GetPublishedFileId(), modReplacement.ModName))
+        if (!UnSubscribeToMod(modReplacement.ModMetaData, modReplacement.ModName))
         {
             return;
         }
@@ -220,9 +226,16 @@ public static class UseThisInstead
         Replacing = false;
     }
 
-    private static bool UnSubscribeToMod(PublishedFileId_t modId, string modName)
+    private static bool UnSubscribeToMod(ModMetaData modMetaData, string modName)
     {
+        if (!modMetaData.OnSteamWorkshop)
+        {
+            StatusMessages.Add("UTI.cantUnsubscribe".Translate(modName));
+            return true;
+        }
+
         var installedMods = ModLister.AllInstalledMods.ToList();
+        var modId = modMetaData.GetPublishedFileId();
         var unsubscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
 
         if (unsubscribedMod == null)

@@ -64,6 +64,10 @@ internal class UseThisInsteadMod : Mod
 
         listing_Standard.CheckboxLabeled("UTI.alwaysShow".Translate(), ref Settings.AlwaysShow,
             "UTI.alwaysShowtt".Translate());
+        listing_Standard.CheckboxLabeled("UTI.allMods".Translate(), ref Settings.AllMods,
+            "UTI.allModstt".Translate());
+        listing_Standard.CheckboxLabeled("UTI.onlyRelevant".Translate(), ref Settings.OnlyRelevant,
+            "UTI.onlyRelevanttt".Translate());
         listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VeboseLogging,
             "UTI.veboseLoggingtt".Translate());
         if (currentVersion != null)

@@ -53,4 +53,12 @@ NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lor
   <UTI.incompatibility>{0} est incompatible avec un mod actif : {0}</UTI.incompatibility>
   <UTI.checkingRequirements>Vérification de l'installation des prérequis</UTI.checkingRequirements>
   <UTI.replacementStatus>Progression du remplacement</UTI.replacementStatus>
+  <UTI.showingRelevant>Afficher les remplacements pertinents</UTI.showingRelevant>
+  <UTI.showingAll>Afficher tous les remplacements</UTI.showingAll>
+  <UTI.onlyRelevantInfo>Ne montrer que les remplacements compatibles</UTI.onlyRelevantInfo>
+  <UTI.onlyRelevant>Ne montrer que les remplacements compatibles</UTI.onlyRelevant>
+  <UTI.onlyRelevanttt>N'affichera pas les remplacements qui ne prennent pas en charge la version installée du jeu.</UTI.onlyRelevanttt>
+  <UTI.steamMod>Le mod est chargé à partir du dossier mod de Steam</UTI.steamMod>
+  <UTI.localMod>Le mod est chargé à partir du dossier mod local</UTI.localMod>
+  <UTI.cantUnsubscribe>{0} est un module local, sautant la désinscription</UTI.cantUnsubscribe>
 </LanguageData>

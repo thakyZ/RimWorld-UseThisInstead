@@ -15,6 +15,8 @@ public class Dialog_ModReplacements : Window
     private static readonly Vector2 previewImage = new Vector2(120f, 100f);
     private static readonly Vector2 buttonSize = new Vector2(140f, 25f);
     private static readonly Texture2D ArrowTex = ContentFinder<Texture2D>.Get("UI/Overlays/TutorArrowRight");
+    private static readonly Texture2D steamIcon = ContentFinder<Texture2D>.Get("UI/Steam");
+    private static readonly Texture2D folderIcon = ContentFinder<Texture2D>.Get("UI/Folder");
 
     public Dialog_ModReplacements()
     {
@@ -68,12 +70,27 @@ public class Dialog_ModReplacements : Window
         Rect subtitleRect;
         if (!UseThisInstead.Replacing)
         {
-            var originalSetting = UseThisInsteadMod.instance.Settings.AllMods;
+            var settingChanged = false;
+            var originalSetting = UseThisInsteadMod.instance.Settings.OnlyRelevant;
+            listingStandard.CheckboxLabeled("UTI.onlyRelevant".Translate(),
+                ref UseThisInsteadMod.instance.Settings.OnlyRelevant,
+                "UTI.onlyRelevanttt".Translate());
+
+            if (originalSetting != UseThisInsteadMod.instance.Settings.OnlyRelevant)
+            {
+                settingChanged = true;
+            }
+
+            originalSetting = UseThisInsteadMod.instance.Settings.AllMods;
             listingStandard.CheckboxLabeled("UTI.allMods".Translate(), ref UseThisInsteadMod.instance.Settings.AllMods,
                 "UTI.allModstt".Translate());
             subtitleRect = listingStandard.GetRect(0);
-
             if (originalSetting != UseThisInsteadMod.instance.Settings.AllMods)
+            {
+                settingChanged = true;
+            }
+
+            if (settingChanged)
             {
                 UseThisInsteadMod.instance.WriteSettingsOnly();
                 UseThisInstead.CheckForReplacements(true);
@@ -81,6 +98,9 @@ public class Dialog_ModReplacements : Window
         }
         else
         {
+            listingStandard.Label(UseThisInsteadMod.instance.Settings.OnlyRelevant
+                ? "UTI.showingRelevant".Translate()
+                : "UTI.showingAll".Translate());
             subtitleRect = listingStandard.Label(UseThisInsteadMod.instance.Settings.AllMods
                 ? "UTI.checkingAll".Translate()
                 : "UTI.checkingEnabled".Translate());
@@ -197,6 +217,16 @@ public class Dialog_ModReplacements : Window
             {
                 Application.OpenURL(modInfo.SteamUri().AbsoluteUri);
             }
+
+            if (modInfo.ModMetaData.OnSteamWorkshop)
+            {
+                Widgets.DrawTextureFitted(previewRect.BottomHalf().LeftHalf().LeftHalf(), steamIcon, 1f);
+                TooltipHandler.TipRegion(previewRect.BottomHalf().LeftHalf().LeftHalf(), "SMU.SteamMod".Translate());
+                continue;
+            }
+
+            Widgets.DrawTextureFitted(previewRect.BottomHalf().LeftHalf().LeftHalf(), folderIcon, 1f);
+            TooltipHandler.TipRegion(previewRect.BottomHalf().LeftHalf().LeftHalf(), "SMU.LocalMod".Translate());
         }
 
         scrollListing.End();

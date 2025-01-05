@@ -53,4 +53,12 @@
   <UTI.incompatibility>{0}与激活的模式不兼容：{0}</UTI.incompatibility>
   <UTI.checkingRequirements>检查先决条件是否已安装</UTI.checkingRequirements>
   <UTI.replacementStatus>更换进度</UTI.replacementStatus>
+  <UTI.showingRelevant>显示相关替换</UTI.showingRelevant>
+  <UTI.showingAll>显示所有替换</UTI.showingAll>
+  <UTI.onlyRelevantInfo>只显示兼容的替代品</UTI.onlyRelevantInfo>
+  <UTI.onlyRelevant>只显示兼容的替代品</UTI.onlyRelevant>
+  <UTI.onlyRelevanttt>不显示不支持已安装游戏版本的替代品</UTI.onlyRelevanttt>
+  <UTI.steamMod>模式从 Steam 模式文件夹加载</UTI.steamMod>
+  <UTI.localMod>模块从本地模块文件夹加载</UTI.localMod>
+  <UTI.cantUnsubscribe>{0}是本地模式，跳过取消订阅</UTI.cantUnsubscribe>
 </LanguageData>
