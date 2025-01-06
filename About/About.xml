@@ -31,7 +31,14 @@ This mod should work well together with my [url=https://steamcommunity.com/share
 
 This mod will be updated regularly to include new releases. I hope this will be of use and if you have info about a mod-continuation not showing up in the mod or a faulty replacement suggestion, please report it in the comments or on the linked Discord-server.
 
-Added an option to Always show replacement button. Also included the button in the mod-options for those with a custom gui.
+Mod-options
+[list]
+[*] Always show replacement button, event with no replacements
+[*] Show all possible replacements or only for active mods
+[*] Show all replacement-versions or only for the currently installed RimWorld version
+[*] Verbose logging for debugging
+[*] Replacement-button also in the mod-options for those with a custom gui-theme
+[/list]
 
 [table]
     [tr]
@@ -61,5 +68,5 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3396308787][img]https://img.shields.io/github/v/release/emipa606/UseThisInstead?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url] | tags:  continued mods,  replacement suggestions</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.9</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.10</modVersion>
 </ModMetaData>

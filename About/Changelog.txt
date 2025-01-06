@@ -1,5 +1,8 @@
 # Changelog for UseThisInstead
 
+1.5.10 - Maintanence. Added 2 rules and removed 0. Total rules: 1477
+
+
 1.5.9 - Added option to only show mods compatible with the installed rimworld version
 Added check for local mods with indicators and logic during replacement
 Added 1.4 support

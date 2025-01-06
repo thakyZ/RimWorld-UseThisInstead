@@ -12,7 +12,16 @@ This mod should work well together with my [Show Mod Updates](https://steamcommu
 
 This mod will be updated regularly to include new releases. I hope this will be of use and if you have info about a mod-continuation not showing up in the mod or a faulty replacement suggestion, please report it in the comments or on the linked Discord-server.
 
-Added an option to Always show replacement button. Also included the button in the mod-options for those with a custom gui.
+Mod-options
+
+
+-  Always show replacement button, event with no replacements
+-  Show all possible replacements or only for active mods
+-  Show all replacement-versions or only for the currently installed RimWorld version
+-  Verbose logging for debugging
+-  Replacement-button also in the mod-options for those with a custom gui-theme
+
+
 
 ![Image](https://i.imgur.com/Ds0rBAD.png)
 
