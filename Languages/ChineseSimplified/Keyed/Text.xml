@@ -61,4 +61,6 @@
   <UTI.steamMod>模式从 Steam 模式文件夹加载</UTI.steamMod>
   <UTI.localMod>模块从本地模块文件夹加载</UTI.localMod>
   <UTI.cantUnsubscribe>{0}是本地模式，跳过取消订阅</UTI.cantUnsubscribe>
+  <UTI.preferOverlay>首选蒸汽叠加链接</UTI.preferOverlay>
+  <UTI.preferOverlaytt>打开 MOD 网页时，优先选择在 Steam 叠加而不是默认浏览器中启动它</UTI.preferOverlaytt>
 </LanguageData>

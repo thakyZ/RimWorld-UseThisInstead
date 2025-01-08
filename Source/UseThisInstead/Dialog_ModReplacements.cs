@@ -2,6 +2,7 @@ using System.Threading;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Steam;
 
 namespace UseThisInstead;
 
@@ -70,6 +71,13 @@ public class Dialog_ModReplacements : Window
         Rect subtitleRect;
         if (!UseThisInstead.Replacing)
         {
+            if (SteamManager.Initialized)
+            {
+                listingStandard.CheckboxLabeled("UTI.preferOverlay".Translate(),
+                    ref UseThisInsteadMod.instance.Settings.PreferOverlay,
+                    "UTI.preferOverlaytt".Translate());
+            }
+
             var settingChanged = false;
             var originalSetting = UseThisInsteadMod.instance.Settings.OnlyRelevant;
             listingStandard.CheckboxLabeled("UTI.onlyRelevant".Translate(),
@@ -157,7 +165,14 @@ public class Dialog_ModReplacements : Window
             Widgets.DrawHighlightIfMouseover(leftModRect);
             if (Widgets.ButtonInvisible(leftModRect))
             {
-                Application.OpenURL(modInfo.SteamUri(true).AbsoluteUri);
+                if (UseThisInsteadMod.instance.Settings.PreferOverlay)
+                {
+                    SteamUtility.OpenUrl(modInfo.SteamUri(true).AbsoluteUri);
+                }
+                else
+                {
+                    Application.OpenURL(modInfo.SteamUri(true).AbsoluteUri);
+                }
             }
 
             if (UseThisInstead.Replacing)
@@ -215,7 +230,14 @@ public class Dialog_ModReplacements : Window
             Widgets.DrawHighlightIfMouseover(rightModRect);
             if (Widgets.ButtonInvisible(rightModRect))
             {
-                Application.OpenURL(modInfo.SteamUri().AbsoluteUri);
+                if (UseThisInsteadMod.instance.Settings.PreferOverlay)
+                {
+                    SteamUtility.OpenUrl(modInfo.SteamUri().AbsoluteUri);
+                }
+                else
+                {
+                    Application.OpenURL(modInfo.SteamUri().AbsoluteUri);
+                }
             }
 
             if (modInfo.ModMetaData.OnSteamWorkshop)

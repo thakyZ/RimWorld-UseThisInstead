@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <UTI.preferOverlay>Prefer Steam overlay for links</UTI.preferOverlay>
+  <UTI.preferOverlaytt>When opening a mod-page, will prefer to launch it in the Steam overlay instead of the default browser</UTI.preferOverlaytt>
   <UTI.veboseLogging>Verbose logging</UTI.veboseLogging>
   <UTI.veboseLoggingtt>For debugging mostly</UTI.veboseLoggingtt>
   <UTI.waitingUnsub>Waiting for steam to process unsubscription</UTI.waitingUnsub>

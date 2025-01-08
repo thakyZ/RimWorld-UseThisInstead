@@ -61,4 +61,6 @@ NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lor
   <UTI.steamMod>Le mod est chargé à partir du dossier mod de Steam</UTI.steamMod>
   <UTI.localMod>Le mod est chargé à partir du dossier mod local</UTI.localMod>
   <UTI.cantUnsubscribe>{0} est un module local, sautant la désinscription</UTI.cantUnsubscribe>
+  <UTI.preferOverlay>Préférer la superposition de Steam pour les liens</UTI.preferOverlay>
+  <UTI.preferOverlaytt>Lors de l'ouverture d'une page de mod, il est préférable de la lancer dans la surcouche Steam plutôt que dans le navigateur par défaut.</UTI.preferOverlaytt>
 </LanguageData>

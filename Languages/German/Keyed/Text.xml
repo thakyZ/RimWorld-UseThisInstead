@@ -61,4 +61,6 @@ HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie di
   <UTI.steamMod>Mod wird aus dem Steam-Mod-Ordner geladen</UTI.steamMod>
   <UTI.localMod>Mod wird aus dem lokalen Mod-Ordner geladen</UTI.localMod>
   <UTI.cantUnsubscribe>{0} ist ein lokaler Mod, der die Abmeldung überspringt</UTI.cantUnsubscribe>
+  <UTI.preferOverlay>Steam-Overlay für Links bevorzugen</UTI.preferOverlay>
+  <UTI.preferOverlaytt>Beim Öffnen einer Mod-Seite wird diese lieber im Steam-Overlay als im Standardbrowser geöffnet</UTI.preferOverlaytt>
 </LanguageData>

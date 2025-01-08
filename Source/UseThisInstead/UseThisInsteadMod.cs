@@ -2,6 +2,7 @@ using System.IO;
 using Mlie;
 using UnityEngine;
 using Verse;
+using Verse.Steam;
 
 namespace UseThisInstead;
 
@@ -68,6 +69,12 @@ internal class UseThisInsteadMod : Mod
             "UTI.allModstt".Translate());
         listing_Standard.CheckboxLabeled("UTI.onlyRelevant".Translate(), ref Settings.OnlyRelevant,
             "UTI.onlyRelevanttt".Translate());
+        if (SteamManager.Initialized)
+        {
+            listing_Standard.CheckboxLabeled("UTI.preferOverlay".Translate(), ref Settings.PreferOverlay,
+                "UTI.preferOverlaytt".Translate());
+        }
+
         listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VeboseLogging,
             "UTI.veboseLoggingtt".Translate());
         if (currentVersion != null)
