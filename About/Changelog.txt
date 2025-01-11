@@ -1,5 +1,8 @@
 # Changelog for UseThisInstead
 
+1.5.15 - Maintanence. Added 2 rules and removed 0. Total rules: 1551
+
+
 1.5.14 - Updated the workshop-scanning, found 68 new replacements.
 Total replacements: 1549
 
