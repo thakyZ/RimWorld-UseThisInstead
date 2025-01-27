@@ -2,7 +2,7 @@
 <ModReplacement>
   <Author>Revolus</Author>
   <ModId>Revolus.MoreAutosaveSlots</ModId>
-  <ModName>More Autosave Slots</ModName>
+  <ModName>More Autosave Slots: Prevent accidental overwriting of autosaves [1.1 - 1.4]</ModName>
   <ReplacementAuthor>Mlie</ReplacementAuthor>
   <ReplacementModId>Mlie.MoreAutosaveSlots</ReplacementModId>
   <ReplacementName>More Autosave Slots (Continued)</ReplacementName>
