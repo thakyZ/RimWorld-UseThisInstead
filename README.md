@@ -2,6 +2,8 @@
 
 ![Image](https://i.imgur.com/iCj5o7O.png)
 
+**TLDR: This mod scans your installed mods and suggest working/more updated replacements for those mods**
+
 Continuations of mods has many names and has become an large part of the RimWorld modding community.
 It can be hard to keep track of when mods gets a new version by another modder. This mod tries to remedy that by keeping track and informing about when a mod has a replacement version on the workshop. 
 
