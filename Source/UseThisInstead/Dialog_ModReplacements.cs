@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using RimWorld;
 using UnityEngine;
@@ -18,6 +20,7 @@ public class Dialog_ModReplacements : Window
     private static readonly Texture2D ArrowTex = ContentFinder<Texture2D>.Get("UI/Overlays/TutorArrowRight");
     private static readonly Texture2D steamIcon = ContentFinder<Texture2D>.Get("UI/Steam");
     private static readonly Texture2D folderIcon = ContentFinder<Texture2D>.Get("UI/Folder");
+    private readonly List<ModReplacement> selectedReplacements = [];
 
     public Dialog_ModReplacements()
     {
@@ -114,6 +117,62 @@ public class Dialog_ModReplacements : Window
                 : "UTI.checkingEnabled".Translate());
         }
 
+        var buttonRect = listingStandard.GetRect(30f);
+
+        for (var i = 0; i < selectedReplacements.Count; i++)
+        {
+            var replacement = selectedReplacements[i];
+            if (UseThisInstead.FoundModReplacements.Contains(replacement))
+            {
+                continue;
+            }
+
+            selectedReplacements.Remove(replacement);
+        }
+
+        if (Widgets.ButtonText(buttonRect.LeftHalf().ContractedBy(5, 0),
+                selectedReplacements.Any() ? "UTI.selectNone".Translate() : "UTI.selectAll".Translate(),
+                active: UseThisInstead.FoundModReplacements.Any()))
+        {
+            if (selectedReplacements.Any())
+            {
+                selectedReplacements.Clear();
+            }
+            else
+            {
+                selectedReplacements.AddRange(
+                    UseThisInstead.FoundModReplacements.Where(replacement => replacement.ReplacementSupportsVersion()));
+            }
+        }
+
+        if (Widgets.ButtonText(buttonRect.RightHalf().ContractedBy(5, 0),
+                "UTI.updateSelected".Translate(selectedReplacements.Count),
+                active: selectedReplacements.Any()))
+        {
+            var replaceModString = "UTI.replaceMultipleMods";
+            if (selectedReplacements.Any(replacement => replacement.ModMetaData.Active))
+            {
+                replaceModString += "Active";
+            }
+
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
+                replaceModString.Translate(selectedReplacements.Count),
+                delegate
+                {
+                    if (selectedReplacements.Any(replacement => replacement.ModMetaData.Active))
+                    {
+                        UseThisInstead.AnythingChanged = true;
+                    }
+
+                    new Thread(() =>
+                    {
+                        Thread.CurrentThread.IsBackground = true;
+                        UseThisInstead.ReplaceMods(selectedReplacements);
+                    }).Start();
+                    Find.WindowStack.Add(new ReplacementStatus_Window());
+                }));
+        }
+
         listingStandard.End();
 
         var borderRect = inRect;
@@ -140,18 +199,19 @@ public class Dialog_ModReplacements : Window
                 Widgets.DrawBoxSolid(rowRectFull, alternateBackground);
             }
 
-            var rowRect = rowRectFull.ContractedBy(5f);
+            var rowRectLeft = rowRectFull.ContractedBy(5f).LeftPart(0.9f);
+            var rowRectRight = rowRectFull.ContractedBy(5f).RightPart(0.1f);
 
-            var modInfoRect = rowRect.RightPartPixels(rowRect.width - previewImage.x - 5f);
+            var modInfoRect = rowRectLeft.RightPartPixels(rowRectLeft.width - previewImage.x - 5f);
 
             var leftModRect = modInfoRect.LeftHalf().LeftPartPixels(modInfoRect.LeftHalf().width - (buttonSize.y / 2));
             var rightModRect = modInfoRect.RightHalf()
                 .RightPartPixels(modInfoRect.LeftHalf().width - (buttonSize.y / 2));
-            var actionRect = modInfoRect.LeftHalf();
-            actionRect.width = buttonSize.y;
-            actionRect.x = leftModRect.xMax;
-            actionRect = actionRect.ContractedBy(5);
-            var previewRect = rowRect.LeftPartPixels(previewImage.x);
+            var spacerRect = modInfoRect.LeftHalf();
+            spacerRect.width = buttonSize.y;
+            spacerRect.x = leftModRect.xMax;
+            spacerRect = spacerRect.ContractedBy(5);
+            var previewRect = rowRectLeft.LeftPartPixels(previewImage.x);
 
             if (modInfo.ModMetaData.PreviewImage != null)
             {
@@ -175,46 +235,36 @@ public class Dialog_ModReplacements : Window
                 }
             }
 
+            Widgets.DrawTextureFitted(spacerRect, ArrowTex, 1f);
+
             if (UseThisInstead.Replacing)
             {
-                Widgets.DrawTextureFitted(actionRect.CenteredOnYIn(modInfoRect), TexButton.SpeedButtonTextures[0], 1f);
-                TooltipHandler.TipRegion(actionRect, "UTI.alreadyReplacing".Translate());
-            }
-            else
-            {
-                TooltipHandler.TipRegion(actionRect, "UTI.replace".Translate());
-                if (Widgets.ButtonImageFitted(actionRect, ArrowTex))
-                {
-                    var replaceModString = "UTI.replaceMod";
-                    if (modInfo.ModMetaData.Active)
-                    {
-                        replaceModString += "Active";
-                    }
-
-                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                        replaceModString.Translate(modInfo.ModName, modInfo.ReplacementName, modInfo.Author,
-                            modInfo.ReplacementAuthor, modInfo.Versions, modInfo.ReplacementVersions),
-                        delegate
-                        {
-                            if (modInfo.ModMetaData.Active)
-                            {
-                                UseThisInstead.AnythingChanged = true;
-                            }
-
-                            new Thread(() =>
-                            {
-                                Thread.CurrentThread.IsBackground = true;
-                                UseThisInstead.ReplaceMod(modInfo);
-                            }).Start();
-                            Find.WindowStack.Add(new ReplacementStatus_Window());
-                        }));
-                }
+                Widgets.DrawTextureFitted(rowRectRight, TexButton.SpeedButtonTextures[0], 1f);
+                TooltipHandler.TipRegion(rowRectRight, "UTI.alreadyReplacing".Translate());
             }
 
             var originalColor = GUI.color;
             if (!modInfo.ReplacementSupportsVersion())
             {
                 GUI.color = Color.red;
+            }
+            else if (!UseThisInstead.Replacing)
+            {
+                TooltipHandler.TipRegion(rowRectRight, "UTI.replace".Translate());
+                var selected = selectedReplacements.Contains(modInfo);
+                var selectedOriginally = selected;
+                Widgets.Checkbox(rowRectRight.position, ref selected);
+                if (selectedOriginally != selected)
+                {
+                    if (selected)
+                    {
+                        selectedReplacements.Add(modInfo);
+                    }
+                    else
+                    {
+                        selectedReplacements.Remove(modInfo);
+                    }
+                }
             }
 
             Widgets.Label(rightModRect.TopHalf(), modInfo.ReplacementName);

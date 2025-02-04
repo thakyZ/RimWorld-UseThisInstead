@@ -63,4 +63,12 @@ HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie di
   <UTI.cantUnsubscribe>{0} ist ein lokaler Mod, der die Abmeldung überspringt</UTI.cantUnsubscribe>
   <UTI.preferOverlay>Steam-Overlay für Links bevorzugen</UTI.preferOverlay>
   <UTI.preferOverlaytt>Beim Öffnen einer Mod-Seite wird diese lieber im Steam-Overlay als im Standardbrowser geöffnet</UTI.preferOverlaytt>
+  <UTI.replacing>Ersetzen von {0} (Mod {1} von {2})</UTI.replacing>
+  <UTI.selectNone>Keine auswählen</UTI.selectNone>
+  <UTI.selectAll>Alle auswählen</UTI.selectAll>
+  <UTI.updateSelected>Update {0} ausgewählter Mods</UTI.updateSelected>
+  <UTI.replaceMultipleMods>Ersetzen Sie {0} Mods?</UTI.replaceMultipleMods>
+  <UTI.replaceMultipleModsActive>Ersetzen Sie {0} Mods?
+
+HINWEIS: Da derzeit ein oder mehrere Mods aktiv sind, wird ein Neustart ausgelöst, wenn Sie das Mod-Fenster nach dem Sortieren der neuen Mods schließen.</UTI.replaceMultipleModsActive>
 </LanguageData>

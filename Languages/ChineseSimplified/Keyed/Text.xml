@@ -63,4 +63,12 @@
   <UTI.cantUnsubscribe>{0}是本地模式，跳过取消订阅</UTI.cantUnsubscribe>
   <UTI.preferOverlay>首选蒸汽叠加链接</UTI.preferOverlay>
   <UTI.preferOverlaytt>打开 MOD 网页时，优先选择在 Steam 叠加而不是默认浏览器中启动它</UTI.preferOverlaytt>
+  <UTI.replacing>替换 {0}（{2}的模式 {1）</UTI.replacing>
+  <UTI.selectNone>无</UTI.selectNone>
+  <UTI.selectAll>选择所有</UTI.selectAll>
+  <UTI.updateSelected>更新{0}个选定模式</UTI.updateSelected>
+  <UTI.replaceMultipleMods>替换 {0} 模式？</UTI.replaceMultipleMods>
+  <UTI.replaceMultipleModsActive>替换 {0} 模式？
+
+注意：由于当前有一个或多个模式处于激活状态，因此在对新模式进行排序后关闭模式窗口时将触发重启。</UTI.replaceMultipleModsActive>
 </LanguageData>

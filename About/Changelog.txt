@@ -1,5 +1,9 @@
 # Changelog for UseThisInstead
 
+1.5.35 - Multiple mods can now be selected for replacement at the same time
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.34 - Maintanence. Added 1 rules and removed 0. Total rules: 1572
 
 

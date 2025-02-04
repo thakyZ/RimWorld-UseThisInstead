@@ -32,25 +32,29 @@ public class ReplacementStatus_Window : Window
             return;
         }
 
+        statusMessages.Reverse();
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
         Text.Font = GameFont.Medium;
         listingStandard.Label("UTI.replacementStatus".Translate());
         Text.Font = GameFont.Small;
         listingStandard.Gap();
-        foreach (var statusMessage in statusMessages)
-        {
-            listingStandard.Label(statusMessage);
-        }
-
-        listingStandard.Gap();
+        listingStandard.End();
+        var outRect = inRect;
+        outRect.yMin += listingStandard.CurHeight;
+        var viewRect = outRect;
+        viewRect.height = (statusMessages.Count + 1) * 30f;
+        viewRect.width -= 16f;
+        Widgets.BeginScrollView(outRect, ref UseThisInstead.ScrollPosition, viewRect);
+        var innerListing = new Listing_Standard();
+        innerListing.Begin(viewRect);
         if (UseThisInstead.Replacing)
         {
-            listingStandard.Label(UseThisInstead.ActivityMonitor ? ". . ." : " . . ");
+            innerListing.Label(UseThisInstead.ActivityMonitor ? ". . ." : " . . ");
         }
         else
         {
-            var imageRect = listingStandard.GetRect(50f);
+            var imageRect = innerListing.GetRect(50f);
             var lastStatus = statusMessages.Last();
             if (lastStatus == "UTI.failedToSubscribe".Translate() ||
                 lastStatus == "UTI.failedToUnsubscribe".Translate())
@@ -62,13 +66,20 @@ public class ReplacementStatus_Window : Window
                 Widgets.DrawTextureFitted(imageRect, Widgets.CheckboxOnTex, 1f);
             }
 
-            listingStandard.GapLine();
-            if (listingStandard.ButtonText("Close".Translate(), widthPct: 0.5f))
+            innerListing.GapLine();
+            if (innerListing.ButtonText("Close".Translate(), widthPct: 0.5f))
             {
                 Close();
             }
         }
 
-        listingStandard.End();
+        innerListing.Gap();
+
+        foreach (var statusMessage in statusMessages)
+        {
+            innerListing.Label(statusMessage);
+        }
+
+        Widgets.EndScrollView();
     }
 }

@@ -23,6 +23,10 @@
   <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>
   <UTI.subscribing>Subscribing to {0} with Steam-id {1}</UTI.subscribing>
   <UTI.subscribed>Subscribed to {0}</UTI.subscribed>
+  <UTI.replacing>Replacing {0} (Mod {1} of {2})</UTI.replacing>
+  <UTI.selectNone>Select none</UTI.selectNone>
+  <UTI.selectAll>Select all</UTI.selectAll>
+  <UTI.updateSelected>Update {0} selected mods</UTI.updateSelected>
   <UTI.unsubscribing>Unsubscribing to {0} ({1})</UTI.unsubscribing>
   <UTI.unsubscribed>Unsubscribed to {0}</UTI.unsubscribed>
   <UTI.failedToSubscribe>Failed to subscribe to {0} ({1})</UTI.failedToSubscribe>
@@ -50,6 +54,10 @@ Author: {3}
 Versions: {5}
 
 NOTE: Since the mod is currently active, a restart will be triggered when you close the replacement-list to apply the new mod.</UTI.replaceModActive>
+  <UTI.replaceMultipleMods>Replace {0} mods?</UTI.replaceMultipleMods>
+  <UTI.replaceMultipleModsActive>Replace {0} mods?
+
+NOTE: Since one or more mods are currently active, a restart will be triggered when you close the mod-window after sorting the new mods.</UTI.replaceMultipleModsActive>
   <UTI.replacementStatus>Replacement progress</UTI.replacementStatus>
   <UTI.modReplaced>Replaced "{0}" with "{1}"</UTI.modReplaced>
   <UTI.foundReplacements>Found replacements: {0}</UTI.foundReplacements>

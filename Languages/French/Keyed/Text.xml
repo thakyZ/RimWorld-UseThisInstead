@@ -63,4 +63,12 @@ NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lor
   <UTI.cantUnsubscribe>{0} est un module local, sautant la désinscription</UTI.cantUnsubscribe>
   <UTI.preferOverlay>Préférer la superposition de Steam pour les liens</UTI.preferOverlay>
   <UTI.preferOverlaytt>Lors de l'ouverture d'une page de mod, il est préférable de la lancer dans la surcouche Steam plutôt que dans le navigateur par défaut.</UTI.preferOverlaytt>
+  <UTI.replacing>Remplacement de {0} (Mod {1} de {2})</UTI.replacing>
+  <UTI.selectNone>Sélectionner aucun</UTI.selectNone>
+  <UTI.selectAll>Sélectionner tout</UTI.selectAll>
+  <UTI.updateSelected>Mise à jour de {0} mods sélectionnés</UTI.updateSelected>
+  <UTI.replaceMultipleMods>Remplacer {0} mods ?</UTI.replaceMultipleMods>
+  <UTI.replaceMultipleModsActive>Remplacer {0} mods ?
+
+NOTE : Comme un ou plusieurs mods sont actuellement actifs, un redémarrage sera déclenché lorsque vous fermerez la fenêtre de mods après avoir trié les nouveaux mods.</UTI.replaceMultipleModsActive>
 </LanguageData>
