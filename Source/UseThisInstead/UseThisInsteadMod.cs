@@ -16,7 +16,7 @@ internal class UseThisInsteadMod : Mod
 
     public static string ReplacementsFolderPath;
 
-    private static string currentVersion;
+    public static string CurrentVersion;
 
 
     /// <summary>
@@ -27,7 +27,7 @@ internal class UseThisInsteadMod : Mod
     {
         instance = this;
         Settings = GetSettings<UseThisInsteadSettings>();
-        currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
+        CurrentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
         ReplacementsFolderPath = Path.Combine(Content.RootDir, "Replacements");
         UseThisInstead.CheckForReplacements();
     }
@@ -77,11 +77,11 @@ internal class UseThisInsteadMod : Mod
 
         listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VeboseLogging,
             "UTI.veboseLoggingtt".Translate());
-        if (currentVersion != null)
+        if (CurrentVersion != null)
         {
             listing_Standard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("UTI.modVersion".Translate(currentVersion));
+            listing_Standard.Label("UTI.modVersion".Translate(CurrentVersion));
             GUI.contentColor = Color.white;
         }
 

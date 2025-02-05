@@ -60,6 +60,13 @@ public class Dialog_ModReplacements : Window
         Text.Font = GameFont.Medium;
 
         listingStandard.Label("UTI.foundReplacements".Translate(UseThisInstead.FoundModReplacements.Count));
+        if (UseThisInsteadMod.CurrentVersion != null)
+        {
+            Text.Font = GameFont.Tiny;
+            GUI.contentColor = Color.gray;
+            listingStandard.Label("UTI.modVersion".Translate(UseThisInsteadMod.CurrentVersion));
+            GUI.contentColor = Color.white;
+        }
 
         Text.Font = GameFont.Small;
         if (UseThisInstead.AnythingChanged)
