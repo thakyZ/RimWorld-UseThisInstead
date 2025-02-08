@@ -9,6 +9,7 @@ public class ReplacementStatus_Window : Window
 {
     public ReplacementStatus_Window()
     {
+        doCloseX = true;
         forcePause = true;
         absorbInputAroundWindow = true;
     }
@@ -17,6 +18,12 @@ public class ReplacementStatus_Window : Window
     {
         if (UseThisInstead.Replacing)
         {
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("UTI.reallyAbort".Translate(),
+                delegate
+                {
+                    UseThisInstead.Replacing = false;
+                    Close(doCloseSound);
+                }));
             return;
         }
 
@@ -80,6 +87,7 @@ public class ReplacementStatus_Window : Window
             innerListing.Label(statusMessage);
         }
 
+        innerListing.End();
         Widgets.EndScrollView();
     }
 }

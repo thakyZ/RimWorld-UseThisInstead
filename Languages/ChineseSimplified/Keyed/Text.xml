@@ -71,4 +71,5 @@
   <UTI.replaceMultipleModsActive>替换 {0} 模式？
 
 注意：由于当前有一个或多个模式处于激活状态，因此在对新模式进行排序后关闭模式窗口时将触发重启。</UTI.replaceMultipleModsActive>
+  <UTI.reallyAbort>修改器正在被替换，你确定要中止进程吗？</UTI.reallyAbort>
 </LanguageData>

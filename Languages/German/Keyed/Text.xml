@@ -71,4 +71,5 @@ HINWEIS: Da die Mod derzeit aktiv ist, wird ein Neustart ausgelöst, wenn Sie di
   <UTI.replaceMultipleModsActive>Ersetzen Sie {0} Mods?
 
 HINWEIS: Da derzeit ein oder mehrere Mods aktiv sind, wird ein Neustart ausgelöst, wenn Sie das Mod-Fenster nach dem Sortieren der neuen Mods schließen.</UTI.replaceMultipleModsActive>
+  <UTI.reallyAbort>Mods werden ersetzt, sind Sie sicher, dass Sie den Vorgang abbrechen wollen?</UTI.reallyAbort>
 </LanguageData>

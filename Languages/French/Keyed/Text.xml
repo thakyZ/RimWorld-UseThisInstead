@@ -71,4 +71,5 @@ NOTE : Comme le mod est actuellement actif, un redémarrage sera déclenché lor
   <UTI.replaceMultipleModsActive>Remplacer {0} mods ?
 
 NOTE : Comme un ou plusieurs mods sont actuellement actifs, un redémarrage sera déclenché lorsque vous fermerez la fenêtre de mods après avoir trié les nouveaux mods.</UTI.replaceMultipleModsActive>
+  <UTI.reallyAbort>Les mods sont en train d'être remplacés, êtes-vous sûr de vouloir interrompre le processus ?</UTI.reallyAbort>
 </LanguageData>

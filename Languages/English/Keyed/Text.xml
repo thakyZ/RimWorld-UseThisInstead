@@ -23,6 +23,7 @@
   <UTI.modlistChanged>Modlist updated, will require a restart when closing this window</UTI.modlistChanged>
   <UTI.subscribing>Subscribing to {0} with Steam-id {1}</UTI.subscribing>
   <UTI.subscribed>Subscribed to {0}</UTI.subscribed>
+  <UTI.reallyAbort>Mods are being replaced, are you sure you what to abort the process?</UTI.reallyAbort>
   <UTI.replacing>Replacing {0} (Mod {1} of {2})</UTI.replacing>
   <UTI.selectNone>Select none</UTI.selectNone>
   <UTI.selectAll>Select all</UTI.selectAll>
