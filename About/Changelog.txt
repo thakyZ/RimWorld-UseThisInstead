@@ -1,5 +1,8 @@
 # Changelog for UseThisInstead
 
+1.5.39 - Maintanence. Added 1 rules and removed 0. Total rules: 1579
+
+
 1.5.38 - Added option to abort replacements. Added a few missing replacements.
 Used DeepL to update translations for ChineseSimplified, French, German
 
