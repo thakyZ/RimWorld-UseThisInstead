@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModReplacement>
+  <Author>Dolthead the Scourge</Author>
+  <ModId>TWD.TheVirus</ModId>
+  <ModName>Toxic Waste Disposal</ModName>
+  <ReplacementAuthor>UntouchedWagons</ReplacementAuthor>
+  <ReplacementModId>TWD.TheVirus</ReplacementModId>
+  <ReplacementName>Toxic Waste Disposal [1.5 Fork]</ReplacementName>
+  <ReplacementSteamId>3427466017</ReplacementSteamId>
+  <SteamId>2976631227</SteamId>
+  <Versions>1.4</Versions>
+  <ReplacementVersions>1.4,1.5</ReplacementVersions>
+</ModReplacement>
