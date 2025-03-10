@@ -12,12 +12,11 @@ internal class UseThisInsteadMod : Mod
     /// <summary>
     ///     The instance of the settings to be read by the mod
     /// </summary>
-    public static UseThisInsteadMod instance;
+    public static UseThisInsteadMod instance = null!;
 
-    public static string ReplacementsFolderPath;
+    public static string? ReplacementsFolderPath;
 
-    public static string CurrentVersion;
-
+    public static string? CurrentVersion;
 
     /// <summary>
     ///     Constructor
@@ -57,11 +56,24 @@ internal class UseThisInsteadMod : Mod
         listing_Standard.Begin(rect);
         listing_Standard.Gap();
 
-        if (listing_Standard.ButtonText("UTI.replacements".Translate(UseThisInstead.FoundModReplacements.Count),
-                widthPct: 0.5f))
+        var buttonRow = new Listing_Standard();
+        buttonRow.Begin(listing_Standard.GetRect(30f));
+        buttonRow.ColumnWidth = (rect.width - 17f) / 2;
+
+        if (buttonRow.ButtonText("UTI.replacements".Translate(UseThisInstead.FoundModReplacementsFiltered.Count)))
         {
             Find.WindowStack.Add(new Dialog_ModReplacements());
         }
+
+        buttonRow.NewColumn();
+
+        if (buttonRow.ButtonText("UTI.checkOutdated".Translate()))
+        {
+            UseThisInstead.CheckForReplacements(true);
+        }
+
+        buttonRow.End();
+        listing_Standard.Gap();
 
         listing_Standard.CheckboxLabeled("UTI.alwaysShow".Translate(), ref Settings.AlwaysShow,
             "UTI.alwaysShowtt".Translate());
@@ -75,9 +87,15 @@ internal class UseThisInsteadMod : Mod
                 "UTI.preferOverlaytt".Translate());
         }
 
-        listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VeboseLogging,
+        listing_Standard.CheckboxLabeled("UTI.veboseLogging".Translate(), ref Settings.VerboseLogging,
             "UTI.veboseLoggingtt".Translate());
-        if (CurrentVersion != null)
+        listing_Standard.CheckboxLabeled("UTI.showIgnored".Translate(), ref Settings.ShowIgnoredMods,
+            "UTI.showIgnoredtt".Translate());
+        GUI.contentColor = Color.gray;
+        listing_Standard.Label("UTI.ignoredModsCount".Translate(Settings.IgnoredMods.Count));
+        GUI.contentColor = Color.white;
+
+        if (CurrentVersion is not null)
         {
             listing_Standard.Gap();
             GUI.contentColor = Color.gray;

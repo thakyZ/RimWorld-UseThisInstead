@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 using HarmonyLib;
 using Steamworks;
@@ -17,13 +18,17 @@ namespace UseThisInstead;
 public static class UseThisInstead
 {
     public static Vector2 ScrollPosition;
-    public static Dictionary<ulong, ModReplacement> ModReplacements = [];
-    public static List<ModReplacement> FoundModReplacements;
-    public static bool Scanning;
-    public static bool Replacing;
-    public static bool ActivityMonitor;
-    public static bool AnythingChanged;
-    public static List<string> StatusMessages;
+    public static Dictionary<ulong, ModReplacement> ModReplacements { get; } = [];
+    public static List<ModReplacement> FoundModReplacements { get; } = [];
+    public static List<ModReplacement> FoundModReplacementsFiltered => [..FoundModReplacements.Where((ModReplacement foundMod) => !UseThisInsteadMod.instance.Settings.IgnoredMods.Any((string ignoredMod) => foundMod.ModId?.Equals(ignoredMod, StringComparison.Ordinal) == true))];
+    public static bool Scanning { get; set; }
+    public static bool Replacing { get; set; }
+    public static bool ActivityMonitor { get; set; }
+    public static bool AnythingChanged { get; set; }
+    public static List<string> StatusMessages { get; } = [];
+    public static float Progress => ItemsProcessed / TotalItemsToProcess;
+    public static int ItemsProcessed { get; set; }
+    public static int TotalItemsToProcess { get; set; }
 
     static UseThisInstead()
     {
@@ -39,26 +44,26 @@ public static class UseThisInstead
 
         if (noWait)
         {
-            checkForReplacements();
+            CheckForReplacements();
             return;
         }
 
         Scanning = true;
-        new Thread(() =>
+        Task.Run(async () =>
         {
-            Thread.CurrentThread.IsBackground = true;
-            checkForReplacements();
-        }).Start();
+            await Task.Yield();
+            CheckForReplacements();
+        });
     }
 
-    private static void checkForReplacements()
+    private static void CheckForReplacements()
     {
         if (!ModReplacements.Any())
         {
             LoadAllReplacementFiles();
         }
 
-        FoundModReplacements = [];
+        FoundModReplacements.Clear();
         var modsToCheck = ModLister.AllInstalledMods;
         if (!UseThisInsteadMod.instance.Settings.AllMods)
         {
@@ -78,7 +83,6 @@ public static class UseThisInstead
                 LogMessage($"Ignoring {mod.Name} since its a local mod and does not have a steam PublishedFileId");
                 continue;
             }
-
 
             if (!ModReplacements.TryGetValue(publishedFileId.m_PublishedFileId, out var replacement))
             {
@@ -103,19 +107,18 @@ public static class UseThisInstead
             FoundModReplacements.Add(replacement);
         }
 
-        FoundModReplacements = FoundModReplacements.OrderBy(replacement => replacement.ModName).ToList();
+        FoundModReplacements.ReplaceAll(FoundModReplacements.OrderBy(replacement => replacement.ModName));
 
-        LogMessage($"Found {FoundModReplacements.Count} replacements", true);
+        LogMessage($"Found {FoundModReplacementsFiltered.Count} replacements", true);
 
         Scanning = false;
     }
 
     public static void LoadAllReplacementFiles()
     {
-        ModReplacements = [];
+        ModReplacements.Clear();
 
-        var replacementFiles = Directory.GetFiles(UseThisInsteadMod.ReplacementsFolderPath, "*.xml");
-        foreach (var replacementFile in replacementFiles)
+        foreach (var replacementFile in Directory.GetFiles(UseThisInsteadMod.ReplacementsFolderPath, "*.xml"))
         {
             using var streamReader = new StreamReader(replacementFile);
             var xml = streamReader.ReadToEnd();
@@ -131,10 +134,10 @@ public static class UseThisInstead
             }
         }
 
-        LogMessage($"Loaded {ModReplacements.Count} possible replacements");
+        LogMessage($"Loaded {FoundModReplacementsFiltered.Count} possible replacements");
     }
 
-    public static void ReplaceMods(List<ModReplacement> modReplacements)
+    public static async Task ReplaceModsAsync(List<ModReplacement> modReplacements, CancellationToken token)
     {
         if (Replacing)
         {
@@ -142,39 +145,48 @@ public static class UseThisInstead
         }
 
         Replacing = true;
-        StatusMessages = [];
-        var counter = 0;
-        foreach (var modReplacement in modReplacements)
+        StatusMessages.Clear();
+        for (var counter = 0; counter < modReplacements.Count; counter++)
         {
-            counter++;
+            if (token.IsCancellationRequested)
+            {
+                UseThisInstead.ItemsProcessed = counter;
+                return;
+            }
+
+            var modReplacement = modReplacements[counter];
             StatusMessages.Add("UTI.replacing".Translate(modReplacement.ModName, counter, modReplacements.Count));
-            var justReplace = !modReplacement.ModMetaData.Active ||
-                              modReplacement.ReplacementModId == modReplacement.ModId;
+            var justReplace = modReplacement.ModMetaData?.Active != true || (
+                              modReplacement.ReplacementModId is not null && modReplacement.ModId is not null &&
+                              modReplacement.ReplacementModId == modReplacement.ModId);
             if (!justReplace)
             {
                 ModsConfig.SetActive(modReplacement.ModId, false);
             }
 
-            if (!UnSubscribeToMod(modReplacement.ModMetaData, modReplacement.ModName))
+            if (modReplacement.ModMetaData is { } modMetaData && modReplacement.ModName is string modName && !await UnSubscribeToModAsync(modMetaData, modName, token))
             {
+                UseThisInstead.ItemsProcessed = counter;
                 continue;
             }
 
-            Thread.Sleep(10);
+            await Task.Delay(10);
 
-            if (!SubscribeToMod(modReplacement.GetReplacementPublishedFileId(), modReplacement.ReplacementName))
+            if (modReplacement.ReplacementName is string replacementName && !await SubscribeToModAsync(modReplacement.GetReplacementPublishedFileId(), replacementName, token))
             {
+                UseThisInstead.ItemsProcessed = counter;
                 continue;
             }
 
-            Thread.Sleep(10);
+            await Task.Delay(10);
 
             var installedMods = ModLister.AllInstalledMods.ToList();
             var subscribedMod = installedMods.FirstOrDefault(data =>
                 data.GetPublishedFileId() == modReplacement.GetReplacementPublishedFileId());
 
-            if (subscribedMod == null)
+            if (subscribedMod is null)
             {
+                UseThisInstead.ItemsProcessed = counter;
                 Replacing = false;
                 continue;
             }
@@ -187,6 +199,12 @@ public static class UseThisInstead
 
                 foreach (var modRequirement in requirements.Where(requirement => !requirement.IsSatisfied))
                 {
+                    if (token.IsCancellationRequested)
+                    {
+                        UseThisInstead.ItemsProcessed = counter;
+                        return;
+                    }
+
                     if (modRequirement is ModDependency dependency)
                     {
                         var match = Regex.Match(dependency.steamWorkshopUrl, @"\d+$");
@@ -198,8 +216,7 @@ public static class UseThisInstead
                             continue;
                         }
 
-                        var modId = ulong.Parse(match.Value);
-                        if (SubscribeToMod(new PublishedFileId_t(modId), dependency.displayName))
+                        if (ulong.TryParse(match.Value, out var modId) && await SubscribeToModAsync(new PublishedFileId_t(modId), dependency.displayName, token))
                         {
                             requirementIds.Add(dependency.packageId);
                             continue;
@@ -219,26 +236,39 @@ public static class UseThisInstead
 
             if (justReplace)
             {
+                UseThisInstead.ItemsProcessed = counter;
                 continue;
             }
 
             StatusMessages.Add("UTI.activatingMods".Translate());
             foreach (var requirementId in requirementIds)
             {
-                if (ModLister.GetActiveModWithIdentifier(requirementId, true) == null)
+                if (token.IsCancellationRequested)
+                {
+                    UseThisInstead.ItemsProcessed = counter;
+                    return;
+                }
+
+                if (ModLister.GetActiveModWithIdentifier(requirementId, true) is null)
                 {
                     ModsConfig.SetActive(requirementId, true);
                 }
             }
 
             ModsConfig.SetActive(modReplacement.ReplacementModId, true);
+            UseThisInstead.ItemsProcessed = counter;
         }
 
         Replacing = false;
     }
 
-    private static bool UnSubscribeToMod(ModMetaData modMetaData, string modName)
+    private static async Task<bool> UnSubscribeToModAsync(ModMetaData modMetaData, string modName, CancellationToken token)
     {
+        if (token.IsCancellationRequested)
+        {
+            return false;
+        }
+
         if (!modMetaData.OnSteamWorkshop)
         {
             StatusMessages.Add("UTI.cantUnsubscribe".Translate(modName));
@@ -249,7 +279,7 @@ public static class UseThisInstead
         var modId = modMetaData.GetPublishedFileId();
         var unsubscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
 
-        if (unsubscribedMod == null)
+        if (unsubscribedMod is null)
         {
             return true;
         }
@@ -259,22 +289,27 @@ public static class UseThisInstead
         unsubscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
         var counter = 0;
         StatusMessages.Add("UTI.waitingUnsub".Translate());
-        while (unsubscribedMod != null)
+        while (unsubscribedMod is not null)
         {
+            if (token.IsCancellationRequested)
+            {
+                return false;
+            }
+
             counter++;
             if (counter > 120)
             {
                 break;
             }
 
-            Thread.Sleep(500);
+            await Task.Delay(500);
             ActivityMonitor = !ActivityMonitor;
-            installedMods = ModLister.AllInstalledMods.ToList();
+            installedMods = [..ModLister.AllInstalledMods];
             unsubscribedMod = installedMods.FirstOrDefault(data =>
                 data.GetPublishedFileId() == modId);
         }
 
-        if (unsubscribedMod != null)
+        if (unsubscribedMod is not null)
         {
             StatusMessages.Add("UTI.failedToUnsubscribe".Translate(modName, modId.m_PublishedFileId));
             Replacing = false;
@@ -285,11 +320,16 @@ public static class UseThisInstead
         return true;
     }
 
-    private static bool SubscribeToMod(PublishedFileId_t modId, string modName)
+    private static async Task<bool> SubscribeToModAsync(PublishedFileId_t modId, string modName, CancellationToken token)
     {
+        if (token.IsCancellationRequested)
+        {
+            return false;
+        }
+
         var installedMods = ModLister.AllInstalledMods.ToList();
         var subscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
-        if (subscribedMod != null)
+        if (subscribedMod is not null)
         {
             return true;
         }
@@ -300,21 +340,26 @@ public static class UseThisInstead
         var counter = 0;
         subscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
         StatusMessages.Add("UTI.waitingSub".Translate());
-        while (subscribedMod == null)
+        while (subscribedMod is null)
         {
+            if (token.IsCancellationRequested)
+            {
+                return false;
+            }
+
             counter++;
             if (counter > 120)
             {
                 break;
             }
 
-            Thread.Sleep(500);
+            await Task.Delay(500);
             ActivityMonitor = !ActivityMonitor;
-            installedMods = ModLister.AllInstalledMods.ToList();
+            installedMods = [..ModLister.AllInstalledMods];
             subscribedMod = installedMods.FirstOrDefault(data => data.GetPublishedFileId() == modId);
         }
 
-        if (subscribedMod == null)
+        if (subscribedMod is null)
         {
             StatusMessages.Add("UTI.failedToSubscribe".Translate(modName, modId.m_PublishedFileId));
             Replacing = false;
@@ -333,7 +378,7 @@ public static class UseThisInstead
             return;
         }
 
-        if (!force && !UseThisInsteadMod.instance.Settings.VeboseLogging)
+        if (!force && !UseThisInsteadMod.instance.Settings.VerboseLogging)
         {
             return;
         }

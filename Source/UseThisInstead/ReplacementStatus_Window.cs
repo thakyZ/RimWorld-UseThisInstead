@@ -1,4 +1,6 @@
 using System.Linq;
+using System.Threading;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,11 +9,14 @@ namespace UseThisInstead;
 [StaticConstructorOnStartup]
 public class ReplacementStatus_Window : Window
 {
-    public ReplacementStatus_Window()
+    private readonly CancellationTokenSource cancellationTokenSource;
+    private bool showFullStatusMessages;
+    public ReplacementStatus_Window(CancellationTokenSource tokenSource)
     {
         doCloseX = true;
         forcePause = true;
         absorbInputAroundWindow = true;
+        cancellationTokenSource = tokenSource;
     }
 
     public override void Close(bool doCloseSound = true)
@@ -19,8 +24,9 @@ public class ReplacementStatus_Window : Window
         if (UseThisInstead.Replacing)
         {
             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("UTI.reallyAbort".Translate(),
-                delegate
+                () =>
                 {
+                    cancellationTokenSource.Cancel();
                     UseThisInstead.Replacing = false;
                     Close(doCloseSound);
                 }));
@@ -33,13 +39,18 @@ public class ReplacementStatus_Window : Window
 
     public override void DoWindowContents(Rect inRect)
     {
-        var statusMessages = UseThisInstead.StatusMessages.ToList();
-        if (!statusMessages.Any())
+        ProgressBar.Draw(inRect, UseThisInstead.Progress, new Vector2(250, 18), UseThisInstead.TotalItemsToProcess, UseThisInstead.ItemsProcessed, UseThisInstead.StatusMessages.Last());
+        if (Widgets.ButtonText(inRect, "UTI.showFullStatusMessages".Translate(), true, false, true))
+        {
+            showFullStatusMessages = !showFullStatusMessages;
+        }
+
+        if (!showFullStatusMessages || !UseThisInstead.StatusMessages.Any())
         {
             return;
         }
 
-        statusMessages.Reverse();
+        UseThisInstead.StatusMessages.Reverse();
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
         Text.Font = GameFont.Medium;
@@ -50,7 +61,7 @@ public class ReplacementStatus_Window : Window
         var outRect = inRect;
         outRect.yMin += listingStandard.CurHeight;
         var viewRect = outRect;
-        viewRect.height = (statusMessages.Count + 1) * 30f;
+        viewRect.height = (UseThisInstead.StatusMessages.Count + 1) * 30f;
         viewRect.width -= 16f;
         Widgets.BeginScrollView(outRect, ref UseThisInstead.ScrollPosition, viewRect);
         var innerListing = new Listing_Standard();
@@ -62,7 +73,7 @@ public class ReplacementStatus_Window : Window
         else
         {
             var imageRect = innerListing.GetRect(50f);
-            var lastStatus = statusMessages.Last();
+            var lastStatus = UseThisInstead.StatusMessages.Last();
             if (lastStatus == "UTI.failedToSubscribe".Translate() ||
                 lastStatus == "UTI.failedToUnsubscribe".Translate())
             {
@@ -82,7 +93,7 @@ public class ReplacementStatus_Window : Window
 
         innerListing.Gap();
 
-        foreach (var statusMessage in statusMessages)
+        foreach (var statusMessage in UseThisInstead.StatusMessages)
         {
             innerListing.Label(statusMessage);
         }

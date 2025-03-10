@@ -1,3 +1,5 @@
+using System;
+
 using HarmonyLib;
 using UnityEngine;
 using Verse;
@@ -17,8 +19,8 @@ public static class Widgets_ButtonText_Postfix
             ModsConfig.RestartFromChangedMods();
         }
 
-        if (label != LanguageDatabase.activeLanguage.FriendlyNameNative ||
-            !UseThisInsteadMod.instance.Settings.AlwaysShow && !UseThisInstead.FoundModReplacements.Any())
+        if (!label.Equals(LanguageDatabase.activeLanguage.FriendlyNameNative, StringComparison.Ordinal) ||
+            (!UseThisInsteadMod.instance.Settings.AlwaysShow && !UseThisInstead.FoundModReplacementsFiltered.Any()))
         {
             return;
         }
@@ -31,7 +33,7 @@ public static class Widgets_ButtonText_Postfix
         var newRect = rect;
         newRect.y += rect.height + 5f;
         rect.y += rect.height + 5f;
-        if (Widgets.ButtonText(newRect, "UTI.replacements".Translate(UseThisInstead.FoundModReplacements.Count)))
+        if (Widgets.ButtonText(newRect, "UTI.replacements".Translate(UseThisInstead.FoundModReplacementsFiltered.Count)))
         {
             Find.WindowStack.Add(new Dialog_ModReplacements());
         }

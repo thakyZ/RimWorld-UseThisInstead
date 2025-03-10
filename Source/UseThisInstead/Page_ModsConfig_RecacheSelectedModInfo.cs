@@ -1,6 +1,6 @@
 using HarmonyLib;
 using RimWorld;
-
+// Ignore Spelling: Recache
 namespace UseThisInstead;
 
 [HarmonyPatch(typeof(Page_ModsConfig), "RecacheSelectedModInfo")]

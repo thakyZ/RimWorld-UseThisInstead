@@ -71,4 +71,11 @@ NOTE: Since one or more mods are currently active, a restart will be triggered w
   <UTI.steamMod>Mod is loaded from the Steam mod-folder</UTI.steamMod>
   <UTI.localMod>Mod is loaded from the local mod-folder</UTI.localMod>
   <UTI.cantUnsubscribe>{0} is a local mod, skipping unsubscribing</UTI.cantUnsubscribe>
+  <UTI.showIgnored>Show Ignored Mods</UTI.showIgnored>
+  <UTI.showIgnoredtt>Will show replacements that are ignored.</UTI.showIgnoredtt>
+  <UTI.ignoredModsCount># of ignored mods: {0}</UTI.ignoredModsCount>
+  <UTI.checkOutdated>Force Check Outdated</UTI.checkOutdated>
+  <UTI.ignore>Ignore</UTI.ignore>
+  <UTI.unignore>Unignore</UTI.unignore>
+  <UTI.showFullStatusMessages>Show Full Status Messages</UTI.showFullStatusMessages>
 </LanguageData>
