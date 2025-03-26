@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 using HarmonyLib;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace UseThisInstead;
 [HarmonyBefore("Mlie.ShowModUpdates")]
 public static class Widgets_ButtonText_Postfix
 {
-    public static void Postfix(ref Rect rect, string label)
+    public static void Postfix(ref Rect rect, string? label)
     {
         if (UseThisInstead.AnythingChanged && !Find.WindowStack.AnyWindowAbsorbingAllInput)
         {
@@ -19,7 +20,8 @@ public static class Widgets_ButtonText_Postfix
             ModsConfig.RestartFromChangedMods();
         }
 
-        if (!label.Equals(LanguageDatabase.activeLanguage.FriendlyNameNative, StringComparison.Ordinal) ||
+        // Null check here because for some reason mods like "Mod List Diff" use a null value for the parameter "label".
+        if (label?.Equals(LanguageDatabase.activeLanguage.FriendlyNameNative, StringComparison.Ordinal) == false ||
             (!UseThisInsteadMod.instance.Settings.AlwaysShow && !UseThisInstead.FoundModReplacementsFiltered.Any()))
         {
             return;
@@ -33,6 +35,7 @@ public static class Widgets_ButtonText_Postfix
         var newRect = rect;
         newRect.y += rect.height + 5f;
         rect.y += rect.height + 5f;
+
         if (Widgets.ButtonText(newRect, "UTI.replacements".Translate(UseThisInstead.FoundModReplacementsFiltered.Count)))
         {
             Find.WindowStack.Add(new Dialog_ModReplacements());
