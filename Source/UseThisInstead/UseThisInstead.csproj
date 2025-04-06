@@ -9,7 +9,7 @@
     <DebugSymbols>true</DebugSymbols>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.5.38</FileVersion>
+    <FileVersion>1.5.60</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
